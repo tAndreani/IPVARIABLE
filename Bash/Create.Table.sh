@@ -42,8 +42,3 @@ done
 
 #Create Table
 paste GRCh38.Serial.Number.txt *.value | cut -f 1,2,3,5,6,7 > GM12878.txt
-Boehringer Ingelheim
-
-/project/jgu-cbdm/andradeLab/scratch/tandrean/Tools_Script/bismark/bismark_v0.18.0/test.1.mismatch.parallel/unmapped.sample.6/sub.1mln.AS-165429-LR-25517_R1_val_1.fq_ambiguous_reads_1.fq.gz  
-
-/project/jgu-cbdm/andradeLab/scratch/tandrean/Tools_Script/bismark/bismark_v0.18.0/test.1.mismatch.parallel/unmapped.sample.6/sub.1mln.AS-165429-LR-25517_R2_val_2.fq_ambiguous_reads_2.fq.gz
