@@ -101,7 +101,7 @@ do
 cut -f 4 $i > $i.value;
 done &
 
-#
+#Final Matrix
 d="CTCF EGR1 HDAC2 KDM1A MNT NCOR1 POLR2A RNF2 SMARCA4 TARDBP"
 for i in $d;
 do
