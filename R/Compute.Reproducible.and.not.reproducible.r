@@ -1,11 +1,12 @@
 rm(list=ls())
-setwd("/media/tandrean/Elements/PhD/ChIP-profile/New.Test.Steffen.Data/ChIP.Fibroblast.of.Lung/CTCF")
+setwd("/media/tandrean/Elements/PhD/ChIP-profile/New.Test.Steffen.Data/ChIP.MCF7/CTCF")
 library(data.table)
-mydata<-fread("Fibroblast.of.Lung.2.txt")
+mydata<-fread("MCF7.txt")
 mydata.paste <- paste(mydata$V1, mydata$V2, mydata$V3, sep="_")
 Id <- mydata.paste
 Score <- rowSums(mydata[,4:6])
 
+     
 #Detect the reproducible regions
 #Open a data.table
 df <-data.table(Id=1:length(Id), region.name= Id ,Score=Score, BR=rep(NA,length(Score)),stringsAsFactors=FALSE, key =  "Id")
