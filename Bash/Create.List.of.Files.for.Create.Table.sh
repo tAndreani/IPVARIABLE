@@ -116,4 +116,6 @@ do
   do grep -w $i SMARCA4.txt > $i.SMARCA4.txt ;
 done &
 
+#Subsitute all the files in input from a protein to another (in the r script for Job array)
+grep -rl 'SMARCA4' ./*.r  | xargs sed -i 's/SMARCA4/CTCF/g'
 
