@@ -107,3 +107,13 @@ for i in $d;
 do
 paste GRCh38.Serial.Number.txt $i/*.value | cut -f 1,2,3,5,6,7 > $i.txt;
 done
+
+#Split in chromosomes the master table in order to parallelize afterwards
+e="chr1 chr2 chr3 chr4 chr5 chr6 chr7 chr8 chr9 chr10 chr11 chr12 chr13 chr14 chr15 chr16 chr17 chr18 chr19 chr20 chr21 chr22 chrX chrY chrM"
+
+for i in $e; 
+do
+  do grep -w $i SMARCA4.txt > $i.SMARCA4.txt ;
+done &
+
+
