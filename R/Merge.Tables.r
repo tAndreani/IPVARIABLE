@@ -23,3 +23,12 @@ master.table[is.na(master.table)] <- 0
 
 master.table.CTCF.POLR2A.KDM1A <- subset(master.table,CTCF == 1 & POLR2A == 1 & KDM1A == 1)
 head(master.table.CTCF.POLR2A.KDM1A)
+
+
+#Map network in protein space
+network <- master.table%*%t(master.table)
+head(network[1:10,1:10])
+
+#Map network in motif space
+nework_motif <- t(d)%*%(d)
+head(nework_motif)
