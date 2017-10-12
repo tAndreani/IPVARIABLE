@@ -20,15 +20,32 @@ df9 <- fread("Reproducible.SMARCA4.and.vector.bed.sort.bed.formatted.txt",header
 master.table <- Reduce(function(x, y) merge(x, y, all=TRUE), list(df1, df2, df3, df4, df5, df6, df7, df8, df9))
 colnames(master.table) <- c("Id","CTCF","EGR1","HDAC2","KDM1A","MNT","NCOR1","POLR2A","RNF2","SMARCA4")
 master.table[is.na(master.table)] <- 0
+master.table.matrix <- as.matrix(master.table[,2:10])
+head(master.table)
 
-master.table.CTCF.POLR2A.KDM1A <- subset(master.table,CTCF == 1 & POLR2A == 1 & KDM1A == 1)
-head(master.table.CTCF.POLR2A.KDM1A)
+master.table$sum <- rowSums(master.table[,2:10])
+cor.test(master.table$MNT,master.table$CTCF)
+hist(master.table$sum,xlim = c(1,9),main="Interacting Partner Histrogram",xlab = "Number of Proteins sharing a 400 bin", ylab = "Number of Bins")
 
 
-#Map network in protein space
-network <- master.table%*%t(master.table)
-head(network[1:10,1:10])
+prot <- t(master.table.matrix)%*%master.table.matrix
+diag(prot) <- 0
+prot.scale <- scale(prot)
+head(prot.scale)
 
-#Map network in motif space
-nework_motif <- t(d)%*%(d)
-head(nework_motif)
+library(gplots)
+heatmap.2(prot.scale,main = "Protein Bins Interactions",margins = c(5,5),reorderfun = function(d, w) reorder(d, w))
+
+set.seed(1)
+n <- 10
+replace=TRUE
+vec <- sample(master.table.matrix, replace=replace)
+dim(master.table.matrix)
+dim(vec) <- c(230826,9)
+colnames(vec) <- c("CTCF","EGR1","HDAC2","KDM1A","MNT","NCOR1","POLR2A","RNF2","SMARCA4")
+prot.samples <- t(vec)%*%vec
+diag(prot.samples) <- 0
+prot.samples.scale <- scale(prot.samples)
+head(prot.samples.scale)
+heatmap.2(prot.samples.scale,main = "Protein Bins Interactions Sampled",margins = c(5,5),reorderfun = function(d, w) reorder(d, w))
+
