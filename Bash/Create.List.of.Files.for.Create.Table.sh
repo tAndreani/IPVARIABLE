@@ -119,3 +119,12 @@ done &
 #Subsitute all the files in input from a protein to another (in the r script for Job array)
 grep -rl 'SMARCA4' ./*.r  | xargs sed -i 's/SMARCA4/CTCF/g'
 
+
+#Create the transaction file
+NR == 1 { for(column=1; column <= NF; column++) values[column]=$column; }
+NR > 1 { output=""
+        for(column=1; column <= NF; column++)
+                if($column) output=output ? output "," values[column] : values[column]
+        print output }
+        
+
