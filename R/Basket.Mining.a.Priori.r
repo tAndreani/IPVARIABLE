@@ -13,7 +13,7 @@ library(arules)
 txn = read.transactions(file="ItemList.proteins.csv", rm.duplicates= TRUE, format="basket",sep=",",cols=1);
 txn@itemInfo$labels <- gsub("\"","",txn@itemInfo$labels)
 str(txn)
-basket_rules <- apriori(txn,parameter = list(sup = 0.01, conf = 0.5,target="rules"));
+basket_rules <- apriori(txn,parameter = list(sup = 0.02, conf = 0.8,target="rules"));
 df_basket <- as(basket_rules,"data.frame")
 df_basket
 dim(df_basket)
