@@ -30,3 +30,19 @@ datm3<- merge(datm2, df4)
 colnames(datm3) <- c("Id","MNT","NCOR1","POLR2A","SMARCA")
 datm3$sum.observed <- rowSums(datm3[,2:5])
 write.table(datm3, "definitive.table.Reproducible.and.not.All.Proteins.txt",row.names=F,col.names = T,sep="\t",quote=F)
+
+#Random: here I need a loop over 100 time in order to have a Null Distribution
+df2 <- datm3[,1:5]
+test <- sapply(df2[,2:5],sample)
+test <- as.data.frame(test)
+test$sum.expected <- rowSums(test[,1:4])
+write.table(test, "Random.txt",row.names=F,col.names = T,sep="\t",quote=F)
+
+#z-score and p.value
+real.value=375
+mu=254.65
+std=12.42
+zscore <- (real.value-mu)/std
+head(zscore)
+pvalue2sided=2*pnorm(-abs(zscore))
+pvalue2sided
