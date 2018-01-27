@@ -30,7 +30,7 @@ datm3<- merge(datm2, df4)
 colnames(datm3) <- c("Id","MNT","NCOR1","POLR2A","SMARCA")
 datm3$sum.observed <- rowSums(datm3[,2:5])
 
-
+#Compute the statistical significance of the Not Reproducible region over expectation
 epodus <- 100
 random.regions.not.reproducible <- numeric(length = epodus)
 cutoff <- 4
