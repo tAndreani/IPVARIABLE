@@ -11,6 +11,7 @@ Obtain the DNA binding of a given protein requires the presence of replicates in
 
 
 ![peaks](https://user-images.githubusercontent.com/6462162/40009504-8453ddac-57a2-11e8-98ce-1c874821e177.png)
+
 Fig. 1) Step to identify reproducible and not reproducible regions considering the boarder of each bin. 
 
 
