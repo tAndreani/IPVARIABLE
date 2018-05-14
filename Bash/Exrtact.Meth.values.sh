@@ -1,7 +1,7 @@
 cd /project/jgu-cbdm/andradeLab/scratch/tandrean/Data/ChIP.Reproducibility/Classification/
 module avail
 module load bio/BEDTools/2.26.0-foss-2017a
-cat Noisy.Regions.bed | awk '{print $1"\t"$2"\t"$3"\t"1}
+cat Noisy.Regions.bed | awk '{print $1"\t"$2"\t"$3"\t"1}'
 cat Noisy.Regions.bed | awk '{print $1"\t"$2"\t"$3"\t"1}' | head
 cat Noisy.Regions.bed | awk '{print $1"\t"$2"\t"$3"\t"1}' > Noisy.Regions.Number.bed
 cat Sticky.Regions.bed | awk '{print $1"\t"$2"\t"$3"\t"0}' > Sticky.Regions.Number.bed
