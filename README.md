@@ -1,9 +1,9 @@
 # ChIP Score
-ChIP Score is a method capable to distinguish DNA regions that are bounded by several proteins and replicates within the same genomic locations. Also, the tool can report noisy regions with a tendency to variate stochastically in a given cell type of interest.
+ChIP Score is a method capable to distinguish DNA regions that are bounded by several proteins and replicates within the same genomic locations and cell type. Also, the tool can report noisy regions with a tendency to variate stochastically in a given cell type of interest.
 
 
 # Idea Behind the tool
-ChIP-seq is a standard technology in wet lab laboratories because it allows to map the genomic regions in which a protein of interest is acting. Regulatory genomics labs have extensively used this technique to describe how, where and which gene is under the control of a protein. However, in the last years, several labs have reported some limitations for the technique. In fact, regions of developmentally regulated, housekeeping and tRNA genes have shown un-specificity for DNA bining proteins in a consistent manner [ref 1,2,3,4]. There are some genomic regions that are attractors of Transcription Factors, and colled "High Occupancy Target" (HOT). It is still a debate whether these HOT regions are functional unit of the genome of simply artefact of ChIP techniques. To be able to distiguish real attractor of Transcription Factor regions Vs artefact it will be important for future analysis.
+ChIP-seq is a standard technology in wet lab laboratories because it allows to map the genomic regions in which a protein of interest is acting. Regulatory genomics labs have extensively used this technique to describe how, where and which gene is under the control of a protein. However, in the last years, several labs have reported some limitations for the technique. In fact, regions of developmentally regulated, housekeeping and tRNA genes have shown un-specificity for DNA bining proteins in a consistent manner [ref 1,2,3,4]. There are some genomic regions that are attractors of Transcription Factors named "High Occupancy Target" (HOT). It is still a debate whether these HOT regions are functional unit of the genome of simply artefact of ChIP techniques. To be able to distiguish real attractor of Transcription Factor regions Vs artefact it will be important for future analysis.
 
 
 # Conceptualization
@@ -17,11 +17,11 @@ Fig. 1) Step to identify reproducible and not reproducible regions considering t
 
 # References
 
-1. Teytelman, Leonid, et al. "Highly expressed loci are vulnerable to misleading ChIP localization of multiple unrelated proteins." Proceedings of the National Academy of Sciences 110.46 (2013): 18602-18607.  
+1. Teytelman Leonid, et al. "Highly expressed loci are vulnerable to misleading ChIP localization of multiple unrelated proteins." Proceedings of the National Academy of Sciences 110.46 (2013): 18602-18607.  
 
-2. Park, Daechan, et al. "Widespread misinterpretable ChIP-seq bias in yeast." PLoS One 8.12 (2013): e83506.  
+2. Park Daechan, et al. "Widespread misinterpretable ChIP-seq bias in yeast." PLoS One 8.12 (2013): e83506.  
 
-3. Jain, Dhawal, et al. "Active promoters give rise to false positive ‘Phantom Peaks’ in ChIP-seq experiments." Nucleic acids research 43.14 (2015): 6959-6968.   
+3. Jain Dhawal, et al. "Active promoters give rise to false positive ‘Phantom Peaks’ in ChIP-seq experiments." Nucleic acids research 43.14 (2015): 6959-6968.   
 
-4. Wreczycka, Katarzyna, et al. "HOT or not: Examining the basis of high-occupancy target regions." bioRxiv (2017).
+4. Wreczycka Katarzyna, et al. "HOT or not: Examining the basis of high-occupancy target regions." bioRxiv (2017).
 
