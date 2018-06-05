@@ -1,5 +1,5 @@
 # ChIP Score
-ChIP Score is a method capable to distinguish DNA regions that are bounded by several proteins and replicates within genomic locations of the same cell type. Also, the tool can report noisy regions that tend to be not reproducible for the transcription factor binding site under investigation.
+ChIP Score is a method capable to distinguish DNA regions that are bounded by several proteins and replicates within genomic locations of the same cell type. Also, the tool can report noisy regions that tend to be not reproducible for the transcription factor binding sites under investigation.
 
 
 # Idea Behind the tool
