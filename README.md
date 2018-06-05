@@ -16,7 +16,6 @@ Fig. 1) Step to identify reproducible and not reproducible regions considering t
 
 
 # References
-
 1. Teytelman Leonid, et al. "Highly expressed loci are vulnerable to misleading ChIP localization of multiple unrelated proteins." Proceedings of the National Academy of Sciences 110.46 (2013): 18602-18607.  
 
 2. Park Daechan, et al. "Widespread misinterpretable ChIP-seq bias in yeast." PLoS One 8.12 (2013): e83506.  
