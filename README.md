@@ -12,7 +12,7 @@ Obtain the DNA binding of a given transcription factor (or protein) requires the
 
 ![peaks](https://user-images.githubusercontent.com/6462162/40009504-8453ddac-57a2-11e8-98ce-1c874821e177.png)
 
-Fig. 1) Step to identify reproducible and not reproducible regions considering the boarder of each bin. 
+Fig. 1) Step to identify reproducible and not reproducible regions considering the boarder of each bin for NCOR1 protein. 
 
 
 # References
