@@ -1,0 +1,30 @@
+All K562 Cell lines samples from Snyder lab
+
+bigwig
+hg19	ARNT	/files/ENCFF186OCZ/@@download/ENCFF186OCZ.bigWig		
+hg19	ARNT	/files/ENCFF738ADF/@@download/ENCFF738ADF.bigWig		
+hg19	ARNT	/files/ENCFF643KYQ/@@download/ENCFF643KYQ.bigWig		
+hg19	MNT	/files/ENCFF638KYE/@@download/ENCFF638KYE.bigWig		
+hg19	MNT	/files/ENCFF757IZU/@@download/ENCFF757IZU.bigWig		
+hg19	MNT	/files/ENCFF205WHE/@@download/ENCFF205WHE.bigWig		
+hg19	NCOR1	/files/ENCFF415WNK/@@download/ENCFF415WNK.bigWig		
+hg19	NCOR1	/files/ENCFF211OZC/@@download/ENCFF211OZC.bigWig		
+hg19	NCOR1	/files/ENCFF292YLV/@@download/ENCFF292YLV.bigWig		
+hg38	ZNF24	/files/ENCFF042QGF/@@download/ENCFF042QGF.bigWig		
+hg38	ZNF24	/files/ENCFF468PJO/@@download/ENCFF468PJO.bigWig		
+hg38	ZNF24	/files/ENCFF026MQA/@@download/ENCFF026MQA.bigWig		
+				
+				
+bed from Idr Threshold	
+hg19	ARNT	no treatment	human	/files/ENCFF507MGL/@@download/ENCFF507MGL.bed.gz
+hg19	ARNT	no treatment	human	/files/ENCFF471ZTZ/@@download/ENCFF471ZTZ.bed.gz
+hg19	ARNT	no treatment	human	/files/ENCFF944GZI/@@download/ENCFF944GZI.bed.gz
+hg19	MNT	no treatment	human	/files/ENCFF059ONJ/@@download/ENCFF059ONJ.bed.gz
+hg19	MNT	no treatment	human	/files/ENCFF567GSX/@@download/ENCFF567GSX.bed.gz
+hg19	MNT	no treatment	human	/files/ENCFF973OME/@@download/ENCFF973OME.bed.gz
+hg19	NCOR1	no treatment	human	/files/ENCFF080NBZ/@@download/ENCFF080NBZ.bed.gz
+hg19	NCOR1	no treatment	human	/files/ENCFF366UBB/@@download/ENCFF366UBB.bed.gz
+hg19	NCOR1	no treatment	human	/files/ENCFF165BCW/@@download/ENCFF165BCW.bed.gz
+hg38	ZNF24	no treatment	human	/files/ENCFF007EEV/@@download/ENCFF007EEV.bed.gz
+hg38	ZNF24	no treatment	human	/files/ENCFF723JDW/@@download/ENCFF723JDW.bed.gz
+hg38	ZNF24	no treatment	human	/files/ENCFF260CBQ/@@download/ENCFF260CBQ.bed.gz
