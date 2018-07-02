@@ -1,0 +1,32 @@
+#Location files in ENCODE
+hg19	ARNT	/files/ENCFF186OCZ/@@download/ENCFF186OCZ.bigWig
+hg19	ARNT	/files/ENCFF738ADF/@@download/ENCFF738ADF.bigWig
+hg19	ARNT	/files/ENCFF643KYQ/@@download/ENCFF643KYQ.bigWig
+hg19	MNT	/files/ENCFF638KYE/@@download/ENCFF638KYE.bigWig
+hg19	MNT	/files/ENCFF757IZU/@@download/ENCFF757IZU.bigWig
+hg19	MNT	/files/ENCFF205WHE/@@download/ENCFF205WHE.bigWig
+hg19	NCOR1	/files/ENCFF415WNK/@@download/ENCFF415WNK.bigWig
+hg19	NCOR1	/files/ENCFF211OZC/@@download/ENCFF211OZC.bigWig
+hg19	NCOR1	/files/ENCFF292YLV/@@download/ENCFF292YLV.bigWig
+hg38	ZNF24	/files/ENCFF042QGF/@@download/ENCFF042QGF.bigWig
+hg38	ZNF24	/files/ENCFF468PJO/@@download/ENCFF468PJO.bigWig
+hg38	ZNF24	/files/ENCFF026MQA/@@download/ENCFF026MQA.bigWig
+
+
+#Custom Track
+
+#ARNT
+track type=bigWig name='ARNT.Rep1' description='ARNT.Rep1' visibility="full" autoScale=off viewLimits=0:1 maxHeightPixels=32:32:11 color=0,0,250 bigDataUrl=http://imbc1.imb.uni-mainz.de/~tandrean/mm/ENCFF186OCZ.bigWig
+track type=bigWig name='ARNT.Rep2' description='ARNT.Rep2' visibility="full" autoScale=off viewLimits=0:1 maxHeightPixels=32:32:11 color=0,0,250 bigDataUrl=http://imbc1.imb.uni-mainz.de/~tandrean/mm/ENCFF738ADF.bigWig
+track type=bigWig name='ARNT.Rep3' description='ARNT.Rep3' visibility="full" autoScale=off viewLimits=0:1 maxHeightPixels=32:32:11 color=0,0,250 bigDataUrl=http://imbc1.imb.uni-mainz.de/~tandrean/mm/ENCFF643KYQ.bigWig
+
+
+#MNT
+track type=bigWig name='MNT.Rep1' description='MNT.Rep1' visibility="full" autoScale=off viewLimits=0:1 maxHeightPixels=32:32:11 color=0,100,0 bigDataUrl=http://imbc1.imb.uni-mainz.de/~tandrean/mm/ENCFF638KYE.bigWig
+track type=bigWig name='MNT.Rep2' description='MNT.Rep2' visibility="full" autoScale=off viewLimits=0:1 maxHeightPixels=32:32:11 color=0,100,0 bigDataUrl=http://imbc1.imb.uni-mainz.de/~tandrean/mm/ENCFF757IZU.bigWig
+track type=bigWig name='MNT.Rep3' description='MNT.Rep3' visibility="full" autoScale=off viewLimits=0:1 maxHeightPixels=32:32:11 color=0,100,0 bigDataUrl=http://imbc1.imb.uni-mainz.de/~tandrean/mm/ENCFF205WHE.bigWig
+
+#NCOR1
+track type=bigWig name='NCOR1.Rep1' description='NCOR1.Rep1' visibility="full" autoScale=off viewLimits=0:1 maxHeightPixels=32:32:11 color=128,0,0 bigDataUrl=http://imbc1.imb.uni-mainz.de/~tandrean/mm/ENCFF415WNK.bigWig
+track type=bigWig name='NCOR1.Rep2' description='NCOR1.Rep2' visibility="full" autoScale=off viewLimits=0:1 maxHeightPixels=32:32:11 color=128,0,0 bigDataUrl=http://imbc1.imb.uni-mainz.de/~tandrean/mm/ENCFF211OZC.bigWig
+track type=bigWig name='NCOR1.Rep3' description='NCOR1.Rep3' visibility="full" autoScale=off viewLimits=0:1 maxHeightPixels=32:32:11 color=128,0,0 bigDataUrl=http://imbc1.imb.uni-mainz.de/~tandrean/mm/ENCFF292YLV.bigWig
