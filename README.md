@@ -8,7 +8,7 @@ ChIP-seq is a standard technology in wet laboratories because it allows to map t
 
 # Experimental Design: extract suitable set of experiments from ENCODE project
 We selected ENCODE experiments for four different proteins in triplicates according to the following standard criteria:  
-1) from the same cell line K562  
+1) from the same cell line  
 2) from the same lab (Snyder)  
 3) processed with the same bioinformatics ENCODE pipeline  
 4) statistical test performed as Irreproducibility Discovery Rare (IDR)  
