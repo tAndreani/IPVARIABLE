@@ -15,11 +15,11 @@ We selected ENCODE experiments for four different proteins in triplicates accord
 5) peaks significant at 5% FDR  
 
 Example of how to retrieve the data:  
-Here we select experiments of 4 proteins and each one with 3 replicates from cell line K562 in the Human Genome annotation GRCh38  
-`example call: 	python get_list.py K562 3 4 GRCh38`  
+Here we select experiments of 4 proteins and each one with 3 replicates from cell line K562 in the Human Genome annotation GRCh38, example call  
+`python get_list.py K562 3 4 GRCh38`  
 
-Here we select experiments of 4 proteins and each one with 2 replicates from cell line HepG2 in the Human Genome annotation hg19   
- `example call:	python get_list.py HepG2 2 4 hg19`  
+Here we select experiments of 4 proteins and each one with 2 replicates from cell line HepG2 in the Human Genome annotation hg19 example call:  
+ `python get_list.py HepG2 2 4 hg19`  
 
 
 # Conceptualization: identification of reproducible and not reproducible regions in K562 cell lines
