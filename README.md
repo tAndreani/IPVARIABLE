@@ -25,12 +25,23 @@ The output of the python script is a table with the information of the experimen
 
 `bash ./Create.List.of.Files.for.Create.Table.sh`  
 
-# Conceptualization: identification of reproducible and not reproducible regions in K562, GM12872, HepG2, hESCS cell lines
+# Identification of reproducible and not reproducible regions in K562, GM12872, HepG2, hESCS cell lines
 The reliability of a binding site of a given transcription factor (or protein) requires the presence of replicates in the experimental design and the presence of the signal in the same genomic regions among the replicates can give a confidence of its stability. Using this concept at the basis of the method, a reproducibility score is developed based on how many time a fixed DNA region, that we named segment, is bounded by a protein among its replicates in the ChIP experiment. If a minimum number of three replicates for a given protein in a cell type is considered, reproducible regions will be those having a significant peak (FDR <= 5%) in all the replicates for a given segment. As expected, the length of the peaks variate between the replicates and for this reason, the board of the segment that do not reach the number three will be inclusded as part of the reproducible region. Contrary, regions with a peak but that never reach the number of three will be annotated as not reproducible. If in between segments with 0 "Sum vector" there is a maximum value of 3 the whole region is reproducible. Opposite if there is not a maximum value of 3 the whole region is not reproducible.
 
 ![peaks](https://user-images.githubusercontent.com/6462162/40009504-8453ddac-57a2-11e8-98ce-1c874821e177.png)
 
 Fig. 1) Step to identify reproducible and not reproducible regions considering the boarder of each bin for NCOR1 protein. 
+
+For this we have developed 4 main function that process the binding sites of the genomic segments and detect reproducibile and not reproducible consecutive segments (regions):
+
+Function 1):  
+
+Function 2):  
+
+Function 3):  
+
+Function 4):  
+
 
 # Reproducibility score matrix 
 Aggregating reproducible and not reproducible regions for the same cell type and different proteins will allow the detection of variable/noisy binding regions.
