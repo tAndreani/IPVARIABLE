@@ -1,5 +1,5 @@
 # ChIP-Score
-ChIP-Score is a method capable to detect variable binding DNA regions bounded by several functional unrelated proteins and respective replicates. It takes in input ChIP-seq peaks and outputs variable binding regions for the cell under investigation.
+ChIP-Score is a method capable to detect variable DNA binding  regions of several unrelated proteins and respective replicates. It takes in input ChIP-seq peaks and outputs variable binding regions for the cell under investigation.
 
 
 # Idea Behind the tool
