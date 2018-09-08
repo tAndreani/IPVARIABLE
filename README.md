@@ -30,9 +30,9 @@ The reliability of a binding site of a given transcription factor (or protein) r
 
 ![peaks](https://user-images.githubusercontent.com/6462162/40009504-8453ddac-57a2-11e8-98ce-1c874821e177.png)
 
-Fig. 1) Step to identify reproducible and not reproducible regions considering the boarder of each bin for NCOR1 protein. 
+Fig. 1) Step to identify reproducible and not reproducible regions considering the boarder of each segment for NCOR1 protein. 
 
-For this we have developed 4 main function that process the binding sites of the genomic segments and detect reproducibile and not reproducible consecutive segments (regions):
+For this we have developed 4 main function in R that process the binding sites of the genomic segments and detect reproducibile and not reproducible consecutive segments (regions):
 
 Function 1):  
 
