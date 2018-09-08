@@ -3,7 +3,7 @@ ChIP-Score is a method capable to detect noisy DNA binding regions of several un
 
 
 # Idea Behind the tool
-ChIP-seq is a standard technology in wet laboratories because it allows to map the genomic regions in which a protein or transcription factor of interest is binding. Regulatory genomics labs have extensively used this technique to describe how, where and which gene is under the control of a transcription factor. However, the extent of the reproducibility of the binding sites can be confounded by several factors, such as the genomic location in which they bind or DNA structure present at the moment of the immunoprecipitation (1,2,3,4). For this we have developed ChIP-score, a method that can report variable binding regions for a given cell type of interest. We refer to these regions as noisy according to a developed reproducibility score.
+ChIP-seq is a standard technology in wet laboratories because it allows to map the genomic regions in which a protein or transcription factor is binding. Regulatory genomics labs have extensively used this technique to describe how, where and which gene is under the control of a transcription factor. However, the extent of the reproducibility of the binding sites can be confounded by several factors, such as the genomic location in which they bind or DNA structure present at the moment of the immunoprecipitation (1,2,3,4). For this we have developed ChIP-score, a method that can report variable binding regions for a given cell type of interest. We refer to these regions as noisy according to a developed reproducibility score.
 
 
 # Experimental Design: define suitable set of experiments from ENCODE project
