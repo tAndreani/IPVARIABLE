@@ -44,9 +44,9 @@ Function 4):
 
 
 # Reproducibility score matrix and estimation of the noisy regions
-Reproducible and not reproducible regions are aggregated in a reproducibility score matrix. Afterwards, z-score calculation obtained after 1000 sampling of the reproducibility score matrix is obtained using the following R function:
+Reproducible and not reproducible regions are aggregated in a reproducibility score matrix. Afterwards, noisy regions are estimated computing a z-score and respective p.value after 1000 sampling of the reproducibility score matrix. R function:
  
-Function 
+Function: `Stath.Test(matrix=matrix, n.simulations=1000, n.regions=n.regions.score.0)`
 
 
 # References
