@@ -1,5 +1,5 @@
 # Ch-IPnoiSY: genome-wide estimation of noisy regions in transcription factor ChIP-seq data
-Ch-IPnoiSY is a method capable to detect noisy DNA binding regions of several unrelated proteins in a given cell type. It takes in input ChIP-seq peaks and outputs noisy regions for the cell under investigation.
+Ch-IPnoiSY is a method capable to detect noisy DNA binding regions of several transcription factors in a given cell type. It takes in input ChIP-seq peaks and outputs noisy regions for the cell under investigation.
 
 
 # Motivation
