@@ -1,5 +1,5 @@
 #Create list of samples
-a="POLR2A RNF2 CTCF NCOR1 NRF1 ZNF24 EGR1 TARDBP SMARCA4 MNT KDM1A HDAC2 HDAC1"
+a="CTCF EGR1 HDAC2 KDM1A MNT NCOR1 POLR2A RNF2 SMARCA4 TARDBP"
 
 #Create a directory for each protein
 for i in $a;
