@@ -34,11 +34,13 @@ After assigning the peaks to the genomic segments, we processed the obtained mat
 
 For this we have developed four main functions in R that process the binding sites of the genomic segments and detect reproducibile and not reproducible consecutive regions (a region are consecutive segments) :
 
-Function 1): `CreateSumMatrix(matrix=matrix)`  
+Function 1): `CreateSumMatrix(matrix=matrix, replicates=n.replicates)`  
 
-Function 2): `NoTReproducibleRegions(matrix=SumMatrix, n.replicates=n.replicates)  `
+Function 2): `ExtractRegionsWithSignals(Id=Id, Score=Score)`   
 
-Function 3): `ReproducibleRegions(matrix=SumMatrix, n.replicates=n.replicates)  `
+Function 3): `NoTReproducibleRegions(matrix=SumMatrix, n.replicates=n.replicates)  `
+
+Function 4): `ReproducibleRegions(matrix=SumMatrix, n.replicates=n.replicates)  `
 
 
 # Reproducibility score matrix and estimation of the noisy regions
