@@ -1,4 +1,4 @@
-# IPNOISY: a method for genome-wide estimation of noisy transcription factor binding sites from ChIP-seq data. 
+# IPNOISY: a method for genome-wide estimation of noisy transcription factor binding sites from ChIP-seq data 
 IPNOISY is a method capable to detect noisy DNA binding regions of several transcription factors in a given cell type. It takes in input ChIP-seq peaks and outputs the noisy ones that tend to be not reproducible.
 
 
