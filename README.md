@@ -30,7 +30,8 @@ The reliability of a binding site of a given transcription factor (or protein) r
 
 ![peaks](https://user-images.githubusercontent.com/6462162/40009504-8453ddac-57a2-11e8-98ce-1c874821e177.png)
 
-.small[ig. 1) Step to identify reproducible and not reproducible regions considering the boarder of each segment for NCOR1 protein. The genome is scanned using a sliding window apporach. Consecutive segments in between a sum vector of 0 are defined as reproducible if the maximum value is three and not reproducible if the maximum values is lower than 3.]
+.small { font-size: 70% }
+.small[Fig. 1) Step to identify reproducible and not reproducible regions considering the boarder of each segment for NCOR1 protein. The genome is scanned using a sliding window apporach. Consecutive segments in between a sum vector of 0 are defined as reproducible if the maximum value is three and not reproducible if the maximum values is lower than 3.]
 
 For this we have developed 4 main functions in R that process the binding sites of the genomic segments and detect reproducibile and not reproducible consecutive segments (regions):
 
