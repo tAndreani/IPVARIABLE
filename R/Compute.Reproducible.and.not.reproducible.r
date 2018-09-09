@@ -7,8 +7,9 @@ Id <- mydata.paste
 Score <- rowSums(mydata[,4:6])
 
      
-#Detect the reproducible regions
-#Open a data.table
+#Detect the reproducible and not reproducible regions
+
+#Open a data.table and extract genomic segments with a peak
 df <-data.table(Id=1:length(Id), region.name= Id ,Score=Score, BR=rep(NA,length(Score)),stringsAsFactors=FALSE, key =  "Id")
 head(df)
 #Run The Algorithm 
