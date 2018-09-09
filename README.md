@@ -34,21 +34,21 @@ After assigning the peaks to the genomic segments, we processed the obtained mat
 
 For this we have developed four main functions in R that process the binding sites of the transcription factor over the genomic segments and detect reproducibile and not reproducible consecutive regions (a region are consecutive segments) :
 
-Function 1): `CreateSumMatrix(matrix=matrix, replicates=n.replicates)`  
+Function 1) `CreateSumMatrix(matrix=matrix, replicates=n.replicates)`  
 
-Function 2): `ExtractRegionsWithSignals(Id=Id, Score=Score)`   
+Function 2) `ExtractRegionsWithSignals(Id=Id, Score=Score)`   
 
-Function 3): `NoTReproducibleRegions(matrix=RegionsWithSignals, n.replicates=n.replicates)  `
+Function 3) `NoTReproducibleRegions(matrix=RegionsWithSignals, n.replicates=n.replicates)  `
 
-Function 4): `ReproducibleRegions(matrix=RegionsWithSignals, n.replicates=n.replicates)  `
+Function 4) `ReproducibleRegions(matrix=RegionsWithSignals, n.replicates=n.replicates)  `
 
 
 # Reproducibility score matrix and estimation of the noisy regions
 Reproducible and not reproducible regions for all the proteins used in the experiments are aggregated in a reproducibility score matrix. Afterwards, noisy regions are estimated computing a z-score and respective p.value after 1000 sampling of the reproducibility score matrix. For this task we have create two R functions, one to create the reproducibility score matrix and the other to estimate the noisy regions:
  
-Function 1): `ReproducibilityScoreMatrix(protein1=protein1, protein2=protein2, protein3=protein3, protein4=protein4)`  
+Function 1) `ReproducibilityScoreMatrix(protein1=protein1, protein2=protein2, protein3=protein3, protein4=protein4)`  
 
-Function 2)  `Stath.Test(matrix=ReproducibilityScoreMatrix, n.simulations=1000, n.regions=n.regions.score.0)`  
+Function 2) `Stath.Test(matrix=ReproducibilityScoreMatrix, n.simulations=1000, n.regions=n.regions.score.0)`  
 
 # Benchmarck in K562, GM12878 and HepG2 cell lines
 
