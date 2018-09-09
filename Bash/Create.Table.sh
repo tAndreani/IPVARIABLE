@@ -1,53 +1,128 @@
-#Start New Analysis with CTCF
+#Create list of samples
+a="CTCF EGR1 HDAC2 KDM1A MNT NCOR1 POLR2A RNF2 SMARCA4 TARDBP"
 
-#Create list of files
-a=/media/tandrean/Elements/PhD/ChIP-profile/New.Test.Steffen.Data/ChIP.GM12878/EN*.bed
-
-#Extract chr start end and select q.val <= 0.05
-for i in $a ;
+#Create a directory for each protein
+for i in $a;
 do
-awk '$9 >= 1.3' $i | sort -k1,1 -k2,2n > $i.q.val.thr.0.05.sort.bed;
+         mkdir $i;
 done
 
-#Intersect the regions overlapping
-for i in *.q.val.thr.0.05.sort.bed;
+
+#Create variable with the name of the url
+prefix=https://www.encodeproject.org
+
+
+#Create url
+for i in $a;
 do
-bedtools intersect -a GRCh38.Serial.Number.txt -b $i -u | awk '{$4=1}1'  | awk '{print $1"\t"$2"\t"$3"\t"$4}' > $i.intersected.GRCh38.400bp;
+  	awk -v prefix="$prefix" '{print prefix $0}' $i/*files > $i/list.url;
+done
+
+#Download
+for i in $a; 
+do 
+        for j in list.url; 
+        do 
+                 (cd $i ; wget -i $j); 
+        done;
 done &
+
+
+#Unzip
+b=/project/jgu-cbdm/andradeLab/scratch/tandrean/Data/Jean-Fred/Test.New.ChIP/files/HD*/*bed.gz
+gunzip $b
+
+b=/project/jgu-cbdm/andradeLab/scratch/tandrean/Data/Jean-Fred/Test.New.ChIP/files/HD*/*bed
+
+for i in $b;
+do
+  awk '$9 >= 1.3' $i | sort -k1,1 -k2,2n > $i.q.val.thr.0.05.sort.bed; 
+done &
+
+
+c="CTCF/ENCFF002CEL.bed.q.val.thr.0.05.sort.bed 
+CTCF/ENCFF002DBD.bed.q.val.thr.0.05.sort.bed
+CTCF/ENCFF002DDJ.bed.q.val.thr.0.05.sort.bed
+CTCF/ENCFF738TKN.bed.q.val.thr.0.05.sort.bed
+EGR1/ENCFF004WYV.bed.q.val.thr.0.05.sort.bed
+EGR1/ENCFF558JBX.bed.q.val.thr.0.05.sort.bed
+HDAC2/ENCFF562JDH.bed.q.val.thr.0.05.sort.bed
+HDAC2/ENCFF657VJX.bed.q.val.thr.0.05.sort.bed
+KDM1A/ENCFF738WCE.bed.q.val.thr.0.05.sort.bed
+KDM1A/ENCFF838COI.bed.q.val.thr.0.05.sort.bed
+MNT/ENCFF059ONJ.bed.q.val.thr.0.05.sort.bed
+MNT/ENCFF567GSX.bed.q.val.thr.0.05.sort.bed
+MNT/ENCFF973OME.bed.q.val.thr.0.05.sort.bed
+NCOR1/ENCFF080NBZ.bed.q.val.thr.0.05.sort.bed
+NCOR1/ENCFF165BCW.bed.q.val.thr.0.05.sort.bed
+NCOR1/ENCFF366UBB.bed.q.val.thr.0.05.sort.bed
+POLR2A/ENCFF002CXQ.bed.q.val.thr.0.05.sort.bed
+POLR2A/ENCFF002CXR.bed.q.val.thr.0.05.sort.bed
+POLR2A/ENCFF248IWJ.bed.q.val.thr.0.05.sort.bed
+POLR2A/ENCFF937VZI.bed.q.val.thr.0.05.sort.bed
+RNF2/ENCFF644WLI.bed.q.val.thr.0.05.sort.bed
+RNF2/ENCFF972LPT.bed.q.val.thr.0.05.sort.bed
+SMARCA4/ENCFF002CVT.bed.q.val.thr.0.05.sort.bed
+SMARCA4/ENCFF197YHU.bed.q.val.thr.0.05.sort.bed
+SMARCA4/ENCFF883TOD.bed.q.val.thr.0.05.sort.bed
+TARDBP/ENCFF261XPP.bed.q.val.thr.0.05.sort.bed
+TARDBP/ENCFF905VXX.bed.q.val.thr.0.05.sort.bed"
+
+#Intersect regions overlapping
+for i in $c;
+do
+bedtools intersect -a GRCh38.Serial.Number.txt -b $i -u | awk '{$4=1}1'  | awk '{print $1"\t"$2"\t"$3"\t"$4}' > $i.intersected.GRCh38.400bp; 
+done 
+&
 
 #Intersect the regions non overlapping
-for i in *.q.val.thr.0.05.sort.bed;
+for i in $c;
 do
-bedtools intersect -a GRCh38.Serial.Number.txt -b $i -v | awk '{$4=0}1'  | awk '{print $1"\t"$2"\t"$3"\t"$4}' > $i.intersected.GRCh38.400bp.not;
-done &
+bedtools intersect -a GRCh38.Serial.Number.txt -b $i -v | awk '{$4=0}1'  | awk '{print $1"\t"$2"\t"$3"\t"$4}' > $i.intersected.GRCh38.400bp.not; 
+done
+
 
 #Concatenate the Two Files
-for f in *.400bp;
+for f in */*.400bp;
 do
 cat "$f" "$f.not" > "$f.yes.and.not" ;  
 done &
 
 #Sort the files
-for i in *.yes.and.not;
+for i in */*.yes.and.not;
 do
 sort -k 1,1 -k2,2n $i > $i.sorted;
 done &
 
+
 #Extract values 0= intersected and 1= intersected
-for i in *.sorted;
+for i in */*.sorted;
 do
 cut -f 4 $i > $i.value;
 done &
 
+#Final Matrix
+d="CTCF EGR1 HDAC2 KDM1A MNT NCOR1 POLR2A RNF2 SMARCA4 TARDBP"
+for i in $d;
+do
+paste GRCh38.Serial.Number.txt $i/*.value | cut -f 1,2,3,5,6,7 > $i.txt;
+done
 
-#Create Table
-paste GRCh38.Serial.Number.txt *.value | cut -f 1,2,3,5,6,7 > GM12878.txt
+#Split in chromosomes the master table in order to parallelize afterwards
+e="chr1 chr2 chr3 chr4 chr5 chr6 chr7 chr8 chr9 chr10 chr11 chr12 chr13 chr14 chr15 chr16 chr17 chr18 chr19 chr20 chr21 chr22 chrX chrY chrM"
 
-#Quality Check
-#control one sample with value 1 chek the pattern in the 3 files. After check the values (i.e. 110 or 010 etc..) control if after the merging they have the same pattern
+for i in $e; 
+do
+  do grep -w $i SMARCA4.txt > $i.SMARCA4.txt ;
+done &
+
+#Subsitute all the files in input from a protein to another (in the r script for Job array)
+grep -rl 'SMARCA4' ./*.r  | xargs sed -i 's/SMARCA4/CTCF/g'
 
 
-
-
-
-
+#Create the transaction file
+NR == 1 { for(column=1; column <= NF; column++) values[column]=$column; }
+NR > 1 { output=""
+        for(column=1; column <= NF; column++)
+                if($column) output=output ? output "," values[column] : values[column]
+        print output }
