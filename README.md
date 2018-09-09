@@ -43,8 +43,11 @@ Function 3):
 Function 4):  
 
 
-# Reproducibility score matrix 
-Aggregating reproducible and not reproducible regions for the same cell type and different proteins will allow the detection of variable/noisy binding regions.
+# Reproducibility score matrix and estimation of the noisy regions
+Reproducible and not reproducible regions for the same cell type and different proteins are aggregated in a reproducibility score matrix. Afterwards, z-score calculation obtained after 1000 sampling is obtained using the following R function>
+
+Function Stat:
+
 
 # References
 1. Teytelman Leonid, et al. "Highly expressed loci are vulnerable to misleading ChIP localization of multiple unrelated proteins." Proceedings of the National Academy of Sciences 110.46 (2013): 18602-18607.  
