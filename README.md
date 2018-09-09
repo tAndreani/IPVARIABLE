@@ -44,9 +44,9 @@ Function 4):
 
 
 # Reproducibility score matrix and estimation of the noisy regions
-Reproducible and not reproducible regions for the same cell type and different proteins are aggregated in a reproducibility score matrix. Afterwards, z-score calculation obtained after 1000 sampling is obtained using the following R function>
+Reproducible and not reproducible regions for the same cell type and different proteins are aggregated in a reproducibility score matrix. Afterwards, z-score calculation obtained after 1000 sampling of the reproducibility score matrix is obtained using the following R function:
 
-Function Stat:
+Function 
 
 
 # References
