@@ -1,5 +1,5 @@
 # IPNOISY: a method for genome-wide estimation of noisy regions in transcription factor ChIP-seq data. 
-IPNOISY is a method capable to detect noisy DNA binding regions of several transcription factors in a given cell type. It takes in input ChIP-seq peaks and outputs noisy regions for the cell under investigation.
+IPNOISY is a method capable to detect noisy DNA binding regions of several transcription factors in a given cell type. It takes in input ChIP-seq peaks and outputs noisy regions.
 
 
 # Motivation
