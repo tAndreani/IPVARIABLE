@@ -11,7 +11,7 @@ We selected ENCODE experiments for four different proteins according to the foll
 1) from the same cell line  
 2) from the same lab (Snyder)  
 3) processed with the same bioinformatics ENCODE pipeline  
-4) statistical test performed as Irreproducibility Discovery Rare (IDR)  
+4) statistical test performed as Irreproducibility Discovery Rate (IDR)  
 5) peaks significant at 5% FDR  
 
 Here we select experiments of 4 proteins and each one with 3 replicates from cell line K562 in the Human Genome annotation GRCh38, example call:  
