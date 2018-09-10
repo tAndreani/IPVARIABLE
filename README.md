@@ -50,7 +50,7 @@ Function 1) `ReproducibilityScoreMatrix(protein1=protein1, protein2=protein2, pr
 
 Function 2) `Stath.Test(matrix=ReproducibilityScoreMatrix, n.simulations=1000, n.regions=n.regions.score.0)`  
 
-# Benchmarck in K562, GM12878 and HepG2 cell lines
+# Benchmarck in K562, GM12878, HepG2 and MCF-7 cell lines
 
 
 # References
