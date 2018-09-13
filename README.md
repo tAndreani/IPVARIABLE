@@ -34,7 +34,9 @@ After assigning the peaks to the genomic segments, we processed the obtained mat
 
 For this we have developed four main functions in R that create the vector with the number of replicates at each genomic segment (sum vector), extract the regions with a signal and compute not reproducibile and reproducible regions:
 
-Function 1) `CreateSumMatrix(matrix=matrix, replicates=n.replicates)`  
+Function 1) `CreateSumMatrix(matrix=matrix)`  
+
+Function 2) `CreateId(matrix=matrix)`
 
 Function 2) `ExtractRegionsWithSignals(Id=Id, Score=Score)`   
 
