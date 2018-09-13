@@ -1,15 +1,23 @@
 rm(list=ls())
-setwd("/media/tandrean/Elements/PhD/ChIP-profile/New.Test.Steffen.Data/ChIP.MCF7/CTCF")
+
+setwd("/home/tandrean/Desktop/")
 library(data.table)
-mydata<-fread("MCF7.txt")
-mydata.paste <- paste(mydata$V1, mydata$V2, mydata$V3, sep="_")
-Id <- mydata.paste
-Score <- rowSums(mydata[,4:6])
+mydata<-fread("chr10.ZNF512B.txt")
+createSumMatrix <- function(df=mydata){
+  mydata.paste <- paste(mydata$V1, mydata$V2, mydata$V3, sep="_")
+  Score <- rowSums(mydata[,4:5])
+}
+Score <- createSumMatrix(mydata)
 
+
+createId <- function(df=mydata){
+  mydata.paste <- paste(mydata$V1, mydata$V2, mydata$V3, sep="_")
+  Id <- mydata.paste
+} 
+Id <- createId(mydata)
      
-#Detect the reproducible and not reproducible regions
-
-#Open a data.table and extract genomic segments with a peak
+#Detect the reproducible regions
+#Open a data.table
 df <-data.table(Id=1:length(Id), region.name= Id ,Score=Score, BR=rep(NA,length(Score)),stringsAsFactors=FALSE, key =  "Id")
 head(df)
 #Run The Algorithm 
@@ -40,7 +48,7 @@ VR_flag <-
   sapply (BR,
           function(posList) {
             tmp=df$Score[match(posList, df$Id)]
-            if (max(tmp) == 3){
+            if (max(tmp) == 2){
               return(T)
             } else {
               df[posList,"BR"] <<- rep(NA,length(posList))
@@ -50,6 +58,7 @@ VR_flag <-
   )
 total = Sys.time() - start
 print(total)
+
 
 #Extract the reproducible and open a dataframe 
 VR = BR[VR_flag]
@@ -70,8 +79,8 @@ for(i in 1:length(out3)){
   df.Reproducible$start[i] <- as.numeric(out3[[i]][2])
   df.Reproducible$end[i] <- as.numeric(out3[[i]][3])
 }
-options(scipen = 999)
-write.table(df.Reproducible,"Reproducible.Fibroblast.of.Lung.2.CTCF.Idr.txt",quote=FALSE,col.names = TRUE,row.names = FALSE,sep="\t")
+
+write.table(df.Reproducible,"Reproducible.chr10.ZNF512B.txt",quote=FALSE,col.names = TRUE,row.names = FALSE,sep="\t")
 length(Score)
 
 
@@ -84,7 +93,7 @@ VR_flag <-
   sapply (BR,
           function(posList) {
             tmp=df$Score[match(posList, df$Id)]
-            if (max(tmp) < 3){
+            if (max(tmp) < 2){
               return(T)
             } else {
               df[posList,"BR"] <<- rep(NA,length(posList))
@@ -115,7 +124,8 @@ for(i in 1:length(out3)){
   df.Not.Reproducible$end[i] <- as.numeric(out3[[i]][3])
 }
 options(scipen = 999)
-write.table(df.Not.Reproducible,"Not.Reproducible.Fibroblast.of.Lung.2.CTCF.Idr.txt",quote=FALSE,col.names = TRUE,row.names = FALSE,sep="\t")
+write.table(df.Not.Reproducible,"Not.Reproducible.chr10.ZNF512B.txt",quote=FALSE,col.names = TRUE,row.names = FALSE,sep="\t")
+
 
 
 
