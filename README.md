@@ -38,11 +38,11 @@ Function 1) `CreateSumMatrix(matrix=matrix)`
 
 Function 2) `CreateId(matrix=matrix)`
 
-Function 3) `ExtractRegionsWithSignals(Id=Id, Score=Score)`   
+Function 3) `CreateScore(matrix=matrix)`   
 
-Function 4) `NoTReproducibleRegions(matrix=RegionsWithSignals, n.replicates=n.replicates)  `
+Function 4) `NoTReproducibleRegions(matrix=RegionsWithSignals, n.replicates=n.replicates, Score=Score, Id=Id)  `
 
-Function 5) `ReproducibleRegions(matrix=RegionsWithSignals, n.replicates=n.replicates)  `
+Function 5) `ReproducibleRegions(matrix=RegionsWithSignals, n.replicates=n.replicates, Score=Score, Id=Id)  `
 
 
 # Reproducibility score matrix and estimation of the noisy regions
