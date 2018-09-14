@@ -1,4 +1,4 @@
- # IPNOISY: a method for genome-wide estimation of noisy transcription factor binding sites from replicated ChIP-seq experiments 
+# IPNOISY: a method for genome-wide estimation of noisy transcription factor binding sites from replicated ChIP-seq experiments 
 IPNOISY is a method capable to detect noisy DNA binding regions of several transcription factors in a given cell type. It takes in input ChIP-seq peaks and outputs the noisy ones that tend to be not reproducible. It can be useful to use this tool in case a wet lab has obtained peaks from ChIP-seq expriments and wants to know the reliability of them before downstream interpretative analysis and/or experimental follow up.
 
 
@@ -32,7 +32,7 @@ After assigning the peaks to the genomic segments, we processed the obtained mat
 
 ###### Fig. 1) Steps to identify reproducible and not reproducible regions considering the boarder of each segment for NCOR1 protein. The genome is scanned using a sliding window apporach. Regions that are in between segments with sum vector of 0 are defined as reproducible if the maximum value is three and not reproducible if the maximum value is lower than three.  
 
-For this we have developed four main functions in R that create the vector with the number of replicates at each genomic segment (sum vector), extract the regions with a signal and compute not reproducibile and reproducible regions:
+For this we have developed five main functions in R that create the vector with the number of replicates at each genomic segment (sum vector), extract the regions with a signal and compute not reproducibile and reproducible regions:
 
 Function 1) `CreateSumMatrix(matrix=matrix)`  
 
