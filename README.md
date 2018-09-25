@@ -54,7 +54,7 @@ Function 1) `ReproducibilityScoreMatrix(protein1=protein1, protein2=protein2, pr
 
 ###### Fig. 2) Converted reproducibility values for each protein used in the experiment for a particular cell type.
 
-Afterwards, regions with a reproducibility score of 0, that we named noisy, are estimated computing a z-score and respective p.value after 1000 sampling of the reproducibility score matrix. For this task we have created two R functions, one to create the reproducibility score matrix and the other to estimate the noisy regions:
+Afterwards, regions with a reproducibility score of 0, that we named noisy, are estimated computing a z-score and respective p.value after 1000 sampling of the reproducibility score matrix. Sampling is performed with the "sample" function in R.
  
 Function 2) `Stath.Test(matrix=ReproducibilityScoreMatrix, n.simulations=1000, n.regions=n.regions.score.0)`  
 
