@@ -60,6 +60,7 @@ Function 2) `Stath.Test(matrix=ReproducibilityScoreMatrix, n.simulations=1000, n
 
 # Noisy regions estimation in K562, GM12878, HepG2 and MCF-7 cell lines
 
+![noisy regions for all the cells](https://user-images.githubusercontent.com/6462162/46009599-5eb56480-c0c0-11e8-8f2f-a57a5c31eb97.png)
 
 # References
 1. Teytelman Leonid, et al. "Highly expressed loci are vulnerable to misleading ChIP localization of multiple unrelated proteins." Proceedings of the National Academy of Sciences 110.46 (2013): 18602-18607.  
