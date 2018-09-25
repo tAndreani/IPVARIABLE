@@ -50,9 +50,9 @@ Reproducible and not reproducible regions for all the proteins used in the exper
 
 Function 1) `ReproducibilityScoreMatrix(protein1=protein1, protein2=protein2, protein3=protein3, protein4=protein4)`  
 
+![final score](https://user-images.githubusercontent.com/6462162/46009363-996acd00-c0bf-11e8-9dae-56426c72f764.png)
 
-
-
+###### Fig. 2) Converted reproducibility values for each protein used in the experiment.
 
 Afterwards, regions with a reproducibility score of 0, that we named noisy, are estimated computing a z-score and respective p.value after 1000 sampling of the reproducibility score matrix. For this task we have created two R functions, one to create the reproducibility score matrix and the other to estimate the noisy regions:
  
