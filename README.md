@@ -52,7 +52,7 @@ Function 1) `ReproducibilityScoreMatrix(protein1=protein1, protein2=protein2, pr
 
 ![final score](https://user-images.githubusercontent.com/6462162/46009363-996acd00-c0bf-11e8-9dae-56426c72f764.png)
 
-###### Fig. 2) Converted reproducibility values for each protein used in the experiment.
+###### Fig. 2) Converted reproducibility values for each protein used in the experiment for a particular cell type.
 
 Afterwards, regions with a reproducibility score of 0, that we named noisy, are estimated computing a z-score and respective p.value after 1000 sampling of the reproducibility score matrix. For this task we have created two R functions, one to create the reproducibility score matrix and the other to estimate the noisy regions:
  
