@@ -47,7 +47,7 @@ Function 4) `NoTReproducibleRegions(matrix=RegionsWithSignals, n.replicates=n.re
 Function 5) `ReproducibleRegions(matrix=RegionsWithSignals, n.replicates=n.replicates, Score=Score, Id=Id)  `
 
 
-# Reproducibility score matrix and estimation of the noisy regions
+# Reproducibility score matrix  
 Reproducible and not reproducible regions for all the proteins used in the experiments are aggregated in a reproducibility score matrix (Fig.2). 
 
 Function 1) `ReproducibilityScoreMatrix(protein1=protein1, protein2=protein2, protein3=protein3, protein4=protein4)`  
@@ -58,9 +58,13 @@ Function 1) `ReproducibilityScoreMatrix(protein1=protein1, protein2=protein2, pr
 
 Afterwards, regions with a reproducibility score of 0, that we named noisy, are estimated computing a z-score and respective p.value after 1000 sampling of the reproducibility score matrix. Sampling is performed with the "sample" function in R.
  
-Function 2) `Stath.Test(matrix=ReproducibilityScoreMatrix, n.simulations=1000, n.regions=n.regions.score.0)`  
 
 # Noisy regions estimation in K562, GM12878, HepG2 and MCF-7 cell lines
+
+A statistical test was computed based according to the computation of the z-score and p.value:  
+
+Function 2) `Stath.Test(matrix=ReproducibilityScoreMatrix, n.simulations=1000, n.regions=n.regions.score.0)`  
+
 
 ![forgith](https://user-images.githubusercontent.com/6462162/46032674-9510d500-c0fc-11e8-8ddc-ea3971f1e075.png)
 
