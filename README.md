@@ -12,9 +12,10 @@ ChIP-seq is a standard technology in wet laboratories because it allows to map t
 We selected ENCODE experiments for four different proteins according to the following standard criteria:  
 1) from the same cell line  
 2) from the same lab (Snyder)  
-3) processed with the same bioinformatics ENCODE pipeline  
-4) statistical test performed as Irreproducibility Discovery Rate (IDR)  
-5) peaks significant at 5% FDR  
+3) quality check filter passed (green color)  
+4) processed with the same bioinformatics ENCODE pipeline  
+5) statistical test performed as Irreproducibility Discovery Rate (IDR)  
+6) peaks significant at 5% FDR  
 
 Here we select experiments of 4 proteins and each one with 3 replicates from cell line K562 in the Human Genome annotation GRCh38, example call:  
 `python get_list.py K562 3 4 GRCh38`  
