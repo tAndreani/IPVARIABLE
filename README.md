@@ -62,7 +62,7 @@ Afterwards, regions with a reproducibility score of 0, that we named noisy, are 
 
 # Noisy regions estimation in K562, GM12878, HepG2 and MCF-7 cell lines
 
-A statistical test was computed based according to the computation of the z-score and p.value:  
+A statistical test was computed based on to the computation of a z-score and p.value using 1000 randomizations:  
 
 Function 2) `Stath.Test(matrix=ReproducibilityScoreMatrix, n.simulations=1000, n.regions=n.regions.score.0)`  
 
