@@ -24,7 +24,11 @@ Here we select experiments of 4 proteins and each one with 2 replicates from cel
  `python get_list.py HepG2 2 4 hg19`  
 
 # Extraction of the experiments, download the files and assign the peaks to genomic segments
-The output of the python script is a table with the information of the experiments. We create the folder for each protein and download the files associated in the table. After we create for each protein the matrix with assigned peaks for every genomic segment. Segments can be of 200 or 400 bp length depending on the user choice. This task is performed with this bash script:  
+The output of the python script is a table with the information of the experiments. We create the folder for each protein and download the files associated in the table. After we create for each protein the matrix with assigned peaks for every genomic segment. Segments can be of 200 or 400 bp length depending on the user choice. Segmentation of the genome is performed with this R script:  
+
+Rstudio 
+
+Assignment of the peaks is performed with this bash script:  
 
 `bash ./Create.Matrix.sh`  
 
