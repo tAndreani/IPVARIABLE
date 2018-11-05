@@ -28,7 +28,7 @@ The output of the python script is a table with the information of the experimen
 
 ` Rstudio Create.Bins.r ` 
 
-Assignment of the peaks is performed with this bash script:  
+Assignment of the peaks to genomics bins is performed with this bash script:  
 
 `bash ./Create.Matrix.sh`  
 
