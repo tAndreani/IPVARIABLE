@@ -8,6 +8,8 @@ ChIP-seq is a standard technology in wet laboratories because it allows to map t
 ![workflow2](https://user-images.githubusercontent.com/6462162/46674868-80910a00-cbdd-11e8-950b-30cd51a87cff.png)
 
 
+###### Fig. 1) In the workflow: ENCODE experiments are selected according to standard parameters, peaks are mapped to genomic bins of a defined window size and a sliding window is used to compute a reproducibility score. Regions with a specific score are tested for significance and enriched with gene regulatory features. 
+
 # Experimental Design: define suitable set of experiments from ENCODE project
 We selected ENCODE experiments for four different proteins according to the following standard criteria:  
 1) from the same cell line  
@@ -39,7 +41,7 @@ After assigning the peaks to the genomic segments, we processed the obtained mat
 
 ![example](https://user-images.githubusercontent.com/6462162/46016470-308e4f80-c0d5-11e8-86d9-de73e4d2d4b8.png)
 
-###### Fig. 1) Steps to identify reproducible and not reproducible regions considering the boarder of each segment for NCOR1 protein. The genome is scanned using a sliding window apporach. Regions that are in between segments with sum vector of 0 are defined as reproducible if the maximum value is three and not reproducible if the maximum value is lower than three.  
+###### Fig. 2) Steps to identify reproducible and not reproducible regions considering the boarder of each segment for NCOR1 protein. The genome is scanned using a sliding window apporach. Regions that are in between segments with sum vector of 0 are defined as reproducible if the maximum value is three and not reproducible if the maximum value is lower than three.  
 
 For this we have developed five main functions in R that create the vector with the number of replicates at each genomic segment (sum vector), extract the regions with a signal and compute not reproducibile and reproducible regions:
 
@@ -61,7 +63,7 @@ Function 1) `ReproducibilityScoreMatrix(protein1=protein1, protein2=protein2, pr
 
 ![final score](https://user-images.githubusercontent.com/6462162/46009363-996acd00-c0bf-11e8-9dae-56426c72f764.png)
 
-###### Fig. 2) Converted reproducibility values for each protein used in the experiment for a particular cell type.
+###### Fig. 3) Converted reproducibility values for each protein used in the experiment for a particular cell type.
 
 Afterwards, regions with a reproducibility score of 0, that we named noisy, are estimated computing a z-score and respective p.value after 1000 sampling of the reproducibility score matrix. Sampling is performed with the "sample" function in R.
  
@@ -74,6 +76,10 @@ Function 2) `Stath.Test(matrix=ReproducibilityScoreMatrix, n.simulations=1000, n
 
 
 ![forgith](https://user-images.githubusercontent.com/6462162/46032674-9510d500-c0fc-11e8-8ddc-ea3971f1e075.png)
+
+###### Fig. 4) A null distribution is computer for each cell line by sampling the reproducibility score matrix. Z-score and P.value is computed for each score. In the picture, represented are the statistical test for DNA regions with reproducibility score 0 (that we renamed Noisy).
+
+
 
 # References
 1. Teytelman Leonid, et al. "Highly expressed loci are vulnerable to misleading ChIP localization of multiple unrelated proteins." Proceedings of the National Academy of Sciences 110.46 (2013): 18602-18607.  
