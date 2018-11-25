@@ -1,5 +1,5 @@
 #Create list of samples
-a="CTCF EGR1 HDAC2 KDM1A MNT NCOR1 POLR2A RNF2 SMARCA4 TARDBP"
+a="MNT NCOR1 SMARCA4 ZNF24"
 
 #Create a directory for each protein
 for i in $a;
@@ -34,6 +34,7 @@ gunzip $b
 
 b=/project/jgu-cbdm/andradeLab/scratch/tandrean/Data/Jean-Fred/Test.New.ChIP/files/HD*/*bed
 
+#Select peaks with FDR <= 5%
 for i in $b;
 do
   awk '$9 >= 1.3' $i | sort -k1,1 -k2,2n > $i.q.val.thr.0.05.sort.bed; 
