@@ -18,7 +18,8 @@ createId <- function(df=mydata){
 Id <- createId(mydata)
      
 #Detect the reproducible regions
-#Open a data.table
+
+#Function 3 not yet finished
 df <-data.table(Id=1:length(Id), region.name= Id ,Score=Score, BR=rep(NA,length(Score)),stringsAsFactors=FALSE, key =  "Id")
 head(df)
 #Run The Algorithm 
@@ -81,7 +82,7 @@ for(i in 1:length(out3)){
   df.Reproducible$end[i] <- as.numeric(out3[[i]][3])
 }
 
-write.table(df.Reproducible,"Reproducible.chr10.ZNF512B.txt",quote=FALSE,col.names = TRUE,row.names = FALSE,sep="\t")
+write.table(df.Reproducible,"Reproducible.text.txt",quote=FALSE,col.names = TRUE,row.names = FALSE,sep="\t")
 length(Score)
 
 
@@ -89,6 +90,9 @@ length(Score)
 
 
 #Compute the non reproducible regions
+#Function 4 not yet finished
+
+
 start = Sys.time()
 VR_flag <- 
   sapply (BR,
@@ -125,7 +129,7 @@ for(i in 1:length(out3)){
   df.Not.Reproducible$end[i] <- as.numeric(out3[[i]][3])
 }
 options(scipen = 999)
-write.table(df.Not.Reproducible,"Not.Reproducible.chr10.ZNF512B.txt",quote=FALSE,col.names = TRUE,row.names = FALSE,sep="\t")
+write.table(df.Not.Reproducible,"Not.Reproducible.text.txt",quote=FALSE,col.names = TRUE,row.names = FALSE,sep="\t")
 
 
 
