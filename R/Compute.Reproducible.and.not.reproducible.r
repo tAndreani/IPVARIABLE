@@ -2,14 +2,15 @@ rm(list=ls())
 
 setwd("/home/tandrean/Desktop/")
 library(data.table)
-mydata<-fread("chr10.ZNF512B.txt")
+mydata<-fread("text.txt")
+#Function1 Ok
 createSumMatrix <- function(df=mydata){
   mydata.paste <- paste(mydata$V1, mydata$V2, mydata$V3, sep="_")
   Score <- rowSums(mydata[,4:5])
 }
 Score <- createSumMatrix(mydata)
 
-
+#Function2 Ok
 createId <- function(df=mydata){
   mydata.paste <- paste(mydata$V1, mydata$V2, mydata$V3, sep="_")
   Id <- mydata.paste
