@@ -49,11 +49,9 @@ Function 1) `CreateSumMatrix(matrix=matrix)`
 
 Function 2) `CreateId(matrix=matrix)`
 
-Function 3) `CreateScore(matrix=matrix)`   
+Function 3) `NoTReproducibleRegions(matrix=RegionsWithSignals, n.replicates=n.replicates, Score=Score, Id=Id)  `
 
-Function 4) `NoTReproducibleRegions(matrix=RegionsWithSignals, n.replicates=n.replicates, Score=Score, Id=Id)  `
-
-Function 5) `ReproducibleRegions(matrix=RegionsWithSignals, n.replicates=n.replicates, Score=Score, Id=Id)  `
+Function 4) `ReproducibleRegions(matrix=RegionsWithSignals, n.replicates=n.replicates, Score=Score, Id=Id)  `
 
 
 # Reproducibility score matrix  
@@ -72,7 +70,7 @@ Afterwards, regions with a reproducibility score of 0, that we named noisy, are 
 
 A statistical test was computed based on to the computation of a z-score and p.value using 1000 randomizations:  
 
-Function 2) `Stath.Test(matrix=ReproducibilityScoreMatrix, n.simulations=1000, n.regions=n.regions.score.0)`  
+Function 5) `Stath.Test(matrix=ReproducibilityScoreMatrix, n.simulations=1000, n.regions=n.regions.score.0)`  
 
 
 ![forgith](https://user-images.githubusercontent.com/6462162/46032674-9510d500-c0fc-11e8-8ddc-ea3971f1e075.png)
