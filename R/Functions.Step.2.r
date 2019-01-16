@@ -121,3 +121,23 @@ for (status in unique(regions_sum$Region.status)) {
 
 total = Sys.time() - start
 print(total)
+
+
+
+
+#Simulate p.value for noisy regions and also for other scoring values
+simulated.pval <- function(n.simulations, cutoff, real.value){
+  for (i in 1:n.simulations) {
+    random.regions.not.reproducible <- numeric(length = n.simulations)
+    df2 <- datm3[,1:5]
+    test <- sapply(df2[,2:5],sample)
+    test <- as.data.frame(test)
+    test$sum.expected <- rowSums(test[,1:4])
+    random.regions.not.reproducible[i] <- subset(test, sum.expected == 4)
+  }
+  mu <- mean(lengths(random.regions.not.reproducible))
+  std <- sd(lengths(random.regions.not.reproducible))
+  zscore <- (real.value-mu)/std
+  pvalue2sided=pnorm(-abs(zscore))
+  head(pvalue2sided)
+}
