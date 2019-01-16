@@ -5,6 +5,10 @@ install.packages("tidyverse")
 library(data.table)
 library(tidyverse)
 
+###################################################
+#Compute Reproducible and not reproducible Regions#
+###################################################
+
 #Function 1 
 createSumMatrix <- function(mydata){
   Score <- rowSums(mydata[,4:6])
@@ -122,10 +126,42 @@ for (status in unique(regions_sum$Region.status)) {
 total = Sys.time() - start
 print(total)
 
+#################################
+#Build Reproducible score matrix#
+#################################
+
+#Import the matrix with reproducible and not reproducible regions
+df1 <- fread("HCFC1.Reproducible.and.Not.Reproducible.txt.fomatted",header=T)
+df2 <- fread("MAFK.Reproducible.and.Not.Reproducible.txt.fomatted",header=T)
+df3 <- fread("ZC3H11A.Reproducible.and.Not.Reproducible.txt.fomatted",header=T)
+df4 <- fread("ZNF384.Reproducible.and.Not.Reproducible.txt.fomatted",header=T)
 
 
+ReproducibilityScoreMatrix<- function(df1,df2,df3,df4){
+  setkeyv(df1, c('Id'))
+  setkeyv(df2, c('Id'))
+  setkeyv(df3, c('Id'))
+  setkeyv(df4, c('Id'))
+  datA<- as.data.frame(df1)
+  datB<- as.data.frame(df2)
+  datC<- as.data.frame(df3)
+  datD<- as.data.frame(df4)
+  datm<- merge(df1, df2)
+  datm2<- merge(datm, df3)
+  datm3<- merge(datm2, df4)
+  colnames(datm3) <- c("Id","HCF1","MAFK","ZC3H11A","ZNF384")
+  head(datm3)
+  datm3$sum.observed <- rowSums(datm3[,2:5])
+  head(datm3)
+}
 
-#Simulate p.value for noisy regions and also for other scoring values
+test <- ReproducibilityScoreMatrix(df1,df2,df3,df4)
+head(test)
+
+######################################################################
+#Simulate p.value for noisy regions and also for other scoring values#
+######################################################################
+
 simulated.pval <- function(n.simulations, cutoff, real.value){
   for (i in 1:n.simulations) {
     random.regions.not.reproducible <- numeric(length = n.simulations)
