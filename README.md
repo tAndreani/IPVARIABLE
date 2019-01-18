@@ -79,6 +79,8 @@ Function 5) `simulated.pval(n.simulations,cutoff,real.value)`
 # Noisy regions prediction in mESC according to several DNA features
 We used the R package "randomforest" to check whether specific genomic regions were predictive of the noisy behaviour. We used a pannel of published datasets and mapped the noisy regions to them. A null model was created with the package gkmSVM and the performance of the algorithm was checked with the package pROC.
 
+![roc curve no ctcf](https://user-images.githubusercontent.com/6462162/51404637-504df580-1b54-11e9-9ade-ec23620b2b48.png)
+![variable explanation without ctcf](https://user-images.githubusercontent.com/6462162/51404642-5348e600-1b54-11e9-997d-a7bee7422342.png)
 
 
 
