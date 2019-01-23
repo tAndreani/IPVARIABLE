@@ -39,12 +39,12 @@ Assignment of the peaks to genomics bins is performed with this bash script:
 # Identification of reproducible and not reproducible regions 
 After the identification of suitable experiments, we binned the genome is segments of 200 base pairs (bp) and assigned the peaks obtained in the .bed format to them. We formalized the assignment of the peak for a given genomic segment as follow:
 
-`Let n be the number of replicates for a given protein;
+``Let n be the number of replicates for a given protein;
      Let s be the segments for a genome;
          Let p be the signal detected in the genomic segment;
                 for i in s;
                     If max p is < n , then reproducibility score is 0
-                else  1`
+                else  1``
 
 For our study n represents the number of replicates for each protein under investigation in a given cell type, s the segments of the genome considering a window size of 200 base pairs, p is the number of peaks in every genomic segment. Consecutive segments with a signal reaching as a max value n are considered as reproducible regions and assigned with a value of 1. Opposite, consecutive segments with a signal reaching a max value lower than n are considered as not reproducible regions and assigned with a value of 0. The output is a table with a list of regions that are reproducible and not reproducible that will be further aggregated for all the protein under study.
 
