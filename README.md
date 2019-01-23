@@ -42,7 +42,7 @@ After the identification of suitable experiments, we binned the genome is segmen
 ```
 Let n be the number of replicates for a given protein;
      Let s be the segments for a genome;
-         Let p be the signal detected in the genomic segment;
+         Let p be the number of Peaks detected in the genomic segment;
                 for i in s;
                     If max p is < n , then reproducibility score is 0
                 else  1
