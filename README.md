@@ -37,7 +37,17 @@ Assignment of the peaks to genomics bins is performed with this bash script:
 `bash ./Create.Matrix.sh`  
 
 # Identification of reproducible and not reproducible regions 
-After assigning the peaks to the genomic segments, we processed the obtained matrix to identify reproducible and not reproducible regions. This is performed based on the assumption that the reliability of a binding site of a given transcription factor (or protein) requires the presence of replicates in the experimental design and the presence of the signal in the same genomic regions among the replicates can give a confidence of its reliability. Using this concept at the basis of the algorithm, a reproducibility value is assigned based on how many time a fixed DNA segment, is bounded by a protein among its replicates in the ChIP experiment. If a minimum number of three replicates for a given protein in a cell type is considered, reproducible regions will be those having a significant peak (FDR <= 5%) in all the replicates for a given segment. As expected, the length of the peaks variate between the replicates and for this reason, the board of the segment that do not reach the number three will be included as part of the reproducible region (Fig.1 in brown). Contrary, regions with a peak but that never reach the number of three will be annotated as not reproducible (Fig.1 in blue).
+After the identification of suitable experiments, we binned the genome is segments of 200 base pairs (bp) and assigned the peaks obtained in the .bed format to them. We formalized the assignment of the peak for a given genomic segment as follow:
+
+`Let n be the number of replicates for a given protein;
+     Let s be the segments for a genome;
+         Let p be the signal detected in the genomic segment;
+                for i in s;
+                    If max p is < n , then reproducibility score is 0
+                else  1`
+
+For our study n represents the number of replicates for each protein under investigation in a given cell type, s the segments of the genome considering a window size of 200 base pairs, p is the number of peaks in every genomic segment. Consecutive segments with a signal reaching as a max value n are considered as reproducible regions and assigned with a value of 1. Opposite, consecutive segments with a signal reaching a max value lower than n are considered as not reproducible regions and assigned with a value of 0. The output is a table with a list of regions that are reproducible and not reproducible that will be further aggregated for all the protein under study.
+
 
 ![example](https://user-images.githubusercontent.com/6462162/46016470-308e4f80-c0d5-11e8-86d9-de73e4d2d4b8.png)
 
