@@ -37,7 +37,7 @@ Assignment of the peaks to genomics bins is performed with this bash script:
 `bash ./Create.Matrix.sh`  
 
 # Identification of reproducible and not reproducible regions 
-After the identification of suitable experiments, we binned the genome is segments of 200 base pairs (bp) and assigned the peaks obtained in the .bed format to them. We formalized the assignment of the peak for a given genomic segment as follow:
+After the identification of suitable experiments, we binned the genome is segments of 200 base pairs (bp) and assigned the peaks obtained in the .bed format to them. We formalized the assignment of reproducible and not reproducible segments as follow:
 
 ```
 Let n be the number of replicates for a given protein;
