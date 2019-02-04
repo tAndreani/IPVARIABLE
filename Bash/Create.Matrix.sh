@@ -41,33 +41,19 @@ do
 done &
 
 
-c="CTCF/ENCFF002CEL.bed.q.val.thr.0.05.sort.bed 
-CTCF/ENCFF002DBD.bed.q.val.thr.0.05.sort.bed
-CTCF/ENCFF002DDJ.bed.q.val.thr.0.05.sort.bed
-CTCF/ENCFF738TKN.bed.q.val.thr.0.05.sort.bed
-EGR1/ENCFF004WYV.bed.q.val.thr.0.05.sort.bed
-EGR1/ENCFF558JBX.bed.q.val.thr.0.05.sort.bed
-HDAC2/ENCFF562JDH.bed.q.val.thr.0.05.sort.bed
-HDAC2/ENCFF657VJX.bed.q.val.thr.0.05.sort.bed
-KDM1A/ENCFF738WCE.bed.q.val.thr.0.05.sort.bed
-KDM1A/ENCFF838COI.bed.q.val.thr.0.05.sort.bed
+c="
 MNT/ENCFF059ONJ.bed.q.val.thr.0.05.sort.bed
 MNT/ENCFF567GSX.bed.q.val.thr.0.05.sort.bed
 MNT/ENCFF973OME.bed.q.val.thr.0.05.sort.bed
 NCOR1/ENCFF080NBZ.bed.q.val.thr.0.05.sort.bed
 NCOR1/ENCFF165BCW.bed.q.val.thr.0.05.sort.bed
 NCOR1/ENCFF366UBB.bed.q.val.thr.0.05.sort.bed
-POLR2A/ENCFF002CXQ.bed.q.val.thr.0.05.sort.bed
-POLR2A/ENCFF002CXR.bed.q.val.thr.0.05.sort.bed
-POLR2A/ENCFF248IWJ.bed.q.val.thr.0.05.sort.bed
-POLR2A/ENCFF937VZI.bed.q.val.thr.0.05.sort.bed
-RNF2/ENCFF644WLI.bed.q.val.thr.0.05.sort.bed
-RNF2/ENCFF972LPT.bed.q.val.thr.0.05.sort.bed
 SMARCA4/ENCFF002CVT.bed.q.val.thr.0.05.sort.bed
 SMARCA4/ENCFF197YHU.bed.q.val.thr.0.05.sort.bed
 SMARCA4/ENCFF883TOD.bed.q.val.thr.0.05.sort.bed
-TARDBP/ENCFF261XPP.bed.q.val.thr.0.05.sort.bed
-TARDBP/ENCFF905VXX.bed.q.val.thr.0.05.sort.bed"
+ZNF24/ENCFF261XPP.bed.q.val.thr.0.05.sort.bed
+ZNF24/ENCFF905VXX.bed.q.val.thr.0.05.sort.bed
+ZNF24/ENCFF854STX.bed.q.val.thr.0.05.sort.bed"
 
 #Bin the genome in segments of a given window (200 base pairs)
 
@@ -107,10 +93,10 @@ cut -f 4 $i > $i.value;
 done &
 
 #Final Matrix
-d="CTCF EGR1 HDAC2 KDM1A MNT NCOR1 POLR2A RNF2 SMARCA4 TARDBP"
+d="MNT NCOR1 SMARCA4 ZNF24"
 for i in $d;
 do
-paste GRCh38.Serial.Number.txt $i/*.value | cut -f 1,2,3,5,6,7 > $i.txt;
+paste hg19.Serial.Number.txt $i/*.value | cut -f 1,2,3,5,6,7 > $i.txt;
 done
 
 #Split in chromosomes the master table in order to parallelize afterwards
