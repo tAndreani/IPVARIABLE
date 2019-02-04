@@ -56,7 +56,7 @@ For our study n represents the number of replicates for each protein under inves
 
 ###### Fig. 2) Steps to identify reproducible and not reproducible regions considering the boarder of each segment for NCOR1 protein. The genome is scanned using a sliding window apporach. Regions that are in between segments with sum vector of 0 are defined as reproducible if the maximum value is three and not reproducible if the maximum value is lower than three.  
 
-For this we have developed three main functions in R that create the vector with the number of signals at each genomic segment (createSumMatrix), create the Id for each segment with the signal (createId) and finally extract the regions with a signal discarding all the others (getSignalContainingRegions) in order to compute reproducibile and not reproducible regions:
+For this we have developed three main functions in R that create the vector with the number of signals at each genomic segment (createSumMatrix), create the Id for each segment with the signal (createId) and finally extract the regions with a signal and compute reproducibile and not reproducible regions (getSignalContainingRegions):
 
 Function 1) `createSumMatrix`  
 
