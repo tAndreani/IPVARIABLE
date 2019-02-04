@@ -69,22 +69,26 @@ SMARCA4/ENCFF883TOD.bed.q.val.thr.0.05.sort.bed
 TARDBP/ENCFF261XPP.bed.q.val.thr.0.05.sort.bed
 TARDBP/ENCFF905VXX.bed.q.val.thr.0.05.sort.bed"
 
+#Bin the genome in segments of a given window (200 base pairs)
+
+bedtools makewindows -g hg19.chr.size.txt -w 200 > hg19.Serial.Number.txt
+
 #Intersect regions overlapping
 for i in $c;
 do
-bedtools intersect -a GRCh38.Serial.Number.txt -b $i -u | awk '{$4=1}1'  | awk '{print $1"\t"$2"\t"$3"\t"$4}' > $i.intersected.GRCh38.400bp; 
+bedtools intersect -a hg19.Serial.Number.txt -b $i -u | awk '{$4=1}1'  | awk '{print $1"\t"$2"\t"$3"\t"$4}' > $i.intersected.hg19.200bp; 
 done 
 &
 
 #Intersect the regions non overlapping
 for i in $c;
 do
-bedtools intersect -a GRCh38.Serial.Number.txt -b $i -v | awk '{$4=0}1'  | awk '{print $1"\t"$2"\t"$3"\t"$4}' > $i.intersected.GRCh38.400bp.not; 
+bedtools intersect -a hg19.Serial.Number.txt -b $i -v | awk '{$4=0}1'  | awk '{print $1"\t"$2"\t"$3"\t"$4}' > $i.intersected.hg19.200bp.not; 
 done
 
 
 #Concatenate the Two Files
-for f in */*.400bp;
+for f in */*.200bp;
 do
 cat "$f" "$f.not" > "$f.yes.and.not" ;  
 done &
