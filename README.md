@@ -28,13 +28,9 @@ Here we select experiments of 4 proteins and each one with 3 replicates from cel
 # Extraction of the experiments, download the files and assign the peaks to genomic segments
 The output of the python script is a table with the information of the experiments. We create the folder for each protein and download the files associated in the table. After we create for each protein the matrix with assigned peaks for every genomic segment. Segments can be of 200 or 400 bp length depending on the user choice. 
 
-Segmentation of the genome is performed with this R script:  
+Segmentation of the genome and assignment of the peaks to genomics bins is performed with this bash script:  
 
-` Rstudio Create.Bins.r ` 
-
-Assignment of the peaks to genomics bins is performed with this bash script:  
-
-`bash ./Create.Matrix.sh`  
+`bash ./Map.Peaks.to.bins.sh`  
 
 # Identification of reproducible and not reproducible regions 
 After the identification of suitable experiments, we binned the genome is segments of 200 base pairs (bp) and assigned the peaks obtained in the .bed format to them. We formalized the assignment of reproducible and not reproducible segments as follow:
