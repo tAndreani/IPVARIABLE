@@ -90,6 +90,8 @@ We used the R package "randomforest" to check whether specific genomic regions w
 ![modelrandom](https://user-images.githubusercontent.com/6462162/52270087-2ceebd00-2940-11e9-830a-45a90344beed.png)
 ![roc](https://user-images.githubusercontent.com/6462162/52270088-2ceebd00-2940-11e9-9a2b-723145fa4aa0.png)
 
+###### Fig. 5) Random forest algorithm predicts noisy regions in mESCs according to sevral features
+
 
 # PCA in K562 cell lines with and without the noisy regions
 We created a python script using pandas in order to perform the PCA and check whether the removal of noisy peaks improves the separation of the replicates in the PCA.  
@@ -97,9 +99,9 @@ We created a python script using pandas in order to perform the PCA and check wh
 `python pca.py`  
 
 
+![pca](https://user-images.githubusercontent.com/6462162/52272385-ed779f00-2946-11e9-8e6c-f7affa9acbb1.png)
 
-
-
+###### Fig. 6) PCA shows an improvment in the separation of the replicates upon removal of the noisy regions
 
 # References
 1) Blackledge, N. P., Zhou, J. C., Tolstorukov, M. Y., Farcas, A. M., Park, P. J., & Klose, R. J. (2010). CpG Islands Recruit a Histone H3 Lysine 36 Demethylase. Molecular Cell, 38(2), 179–190. https://doi.org/10.1016/j.molcel.2010.04.009  
