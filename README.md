@@ -91,6 +91,10 @@ We used the R package "randomforest" to check whether specific genomic regions w
 ![roc](https://user-images.githubusercontent.com/6462162/52270088-2ceebd00-2940-11e9-9a2b-723145fa4aa0.png)
 
 
+# PCA in K562 cell lines with and without the noisy regions
+We created a python script using pandas in order to perform the PCA and check whether the removal of noisy peaks improves the separation of the replicates in the PCA.
+
+
 
 # References
 1) Blackledge, N. P., Zhou, J. C., Tolstorukov, M. Y., Farcas, A. M., Park, P. J., & Klose, R. J. (2010). CpG Islands Recruit a Histone H3 Lysine 36 Demethylase. Molecular Cell, 38(2), 179–190. https://doi.org/10.1016/j.molcel.2010.04.009  
