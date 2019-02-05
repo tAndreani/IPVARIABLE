@@ -70,7 +70,7 @@ where df1, df2, df3 and df4 are the matrix with the regions reproducible and not
 
 ###### Fig. 3) Converted reproducibility values for each protein used in the experiment for a particular cell type.
 
-Afterwards, regions with a reproducibility score of 0, that we named noisy, are estimated computing a z-score and respective p.value after 1000 sampling of the reproducibility score matrix. Sampling is performed with the "sample" function in R.
+Afterwards, regions with at least one NA value were discarded and regions with a reproducibility score of 0, that we named noisy, are estimated computing a z-score and respective p.value after 1000 sampling of the reproducibility score matrix. Sampling is performed with the "sample" function in R.
  
 
 # Noisy regions estimation in K562, GM12878, HepG2 and MCF-7 cell lines
