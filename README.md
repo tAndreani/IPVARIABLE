@@ -92,7 +92,12 @@ We used the R package "randomforest" to check whether specific genomic regions w
 
 
 # PCA in K562 cell lines with and without the noisy regions
-We created a python script using pandas in order to perform the PCA and check whether the removal of noisy peaks improves the separation of the replicates in the PCA.
+We created a python script using pandas in order to perform the PCA and check whether the removal of noisy peaks improves the separation of the replicates in the PCA.  
+
+`python pca.py`  
+
+
+
 
 
 
