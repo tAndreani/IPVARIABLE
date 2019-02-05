@@ -40,7 +40,7 @@ Let n be the number of replicates for a given protein;
      Let s be the segments for a genome;
          Let p be the number of Peaks detected in the genomic segment;
                 for every segment in s;
-                    If max p is < n , then reproducibility score is 0
+                    If max p is < n , then reproducibility value is 0
                 else  1
          return a list of regions reproducible and not reproducible
 ```
