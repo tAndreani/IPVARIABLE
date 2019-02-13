@@ -89,7 +89,7 @@ We used the R package "randomforest" to check whether specific genomic regions w
 
 The script can be run:  
 
-`Rstudio Random.Forset.r`
+`Rstudio Random.Forest.r`
 
 ![modelrandom](https://user-images.githubusercontent.com/6462162/52270087-2ceebd00-2940-11e9-830a-45a90344beed.png)
 ![roc](https://user-images.githubusercontent.com/6462162/52270088-2ceebd00-2940-11e9-9a2b-723145fa4aa0.png)
