@@ -177,3 +177,6 @@ simulated.pval <- function(n.simulations, cutoff, real.value){
   pvalue2sided=pnorm(-abs(zscore))
   head(pvalue2sided)
 }
+
+hist(lengths(random.regions.not.reproducible), xlim = c(500,700),main = "1000 Permutation distributions with 1 reproducibility score \n p.val=0.0008651502 segment 200 bp mouse ESCs",xlab = "Number of Regions",col=c("cornflowerblue"),cex.lab=1.5, cex.axis=1.5, cex.main=1.5, cex.sub=1.5)
+abline(v=real.value,col="red")
