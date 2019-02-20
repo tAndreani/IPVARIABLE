@@ -104,8 +104,12 @@ The script can be run:
 
 
 ![with and without noise 1 na](https://user-images.githubusercontent.com/6462162/53089584-46316500-350d-11e9-83a0-0df5badf4d4f.png)
-
 ###### Fig. 6) PCA shows an improvment in the separation of the replicates upon removal of the noisy regions
+
+![euclidian distance](https://user-images.githubusercontent.com/6462162/53090468-d4a6e600-350f-11e9-80f1-38e0fccfa7ae.png)
+###### Fig. 7) Euclidean distance of pairwise comparisons between replicates of the same protein show shorter distances (replicates get closer to each other) upon removal of the noisy regions
+
+
 
 # References
 1) Blackledge, N. P., Zhou, J. C., Tolstorukov, M. Y., Farcas, A. M., Park, P. J., & Klose, R. J. (2010). CpG Islands Recruit a Histone H3 Lysine 36 Demethylase. Molecular Cell, 38(2), 179–190. https://doi.org/10.1016/j.molcel.2010.04.009  
