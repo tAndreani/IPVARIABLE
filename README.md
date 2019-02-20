@@ -7,7 +7,7 @@ ChIP-seq is a standard technology in wet laboratories because it allows to map t
 
 ![workflow](https://user-images.githubusercontent.com/6462162/53089925-349c8d00-350e-11e9-87c6-a669741b9968.png)
 
-###### Fig. 1) In the workflow: A) ENCODE experiments are selected according to standard parameters, B) peaks are mapped to genomic segments of a defined window size and a sliding window is used to compute a reproducibility score. C) Regions with a specific score are tested for significance and D) PCA is performed to check if the removal of the noisy regions can improve the explanation of the variability of  the samples. 
+###### Figure 1) In the workflow: A) ENCODE experiments are selected according to standard parameters, B) peaks are mapped to genomic segments of a defined window size and a sliding window is used to compute a reproducibility score. C) Regions with a specific score are tested for significance and D) PCA is performed to check if the removal of the noisy regions can improve the explanation of the variability of  the samples. 
 
 # Experimental Design: define suitable set of experiments from ENCODE project
 We selected ENCODE experiments for four different proteins according to the following standard criteria:  
@@ -48,7 +48,7 @@ For our study n represents the number of replicates for each protein under inves
 
 ![fig 2a](https://user-images.githubusercontent.com/6462162/52263210-d4fb8a80-292e-11e9-9235-488fa87071a3.png)
 
-###### Fig. 2) Steps to identify reproducible and not reproducible regions considering the boarder of each segment and then the tale of each peak for NCOR1 protein. The genome is scanned using a sliding window apporach. Regions that are in between segments with sum vector of 0 are defined as reproducible if the maximum value is three and not reproducible if the maximum value is lower than three.  
+###### Figure 2) Steps to identify reproducible and not reproducible regions considering the boarder of each segment and then the tale of each peak for NCOR1 protein. The genome is scanned using a sliding window apporach. Regions that are in between segments with sum vector of 0 are defined as reproducible if the maximum value is three and not reproducible if the maximum value is lower than three.  
 
 For this we have developed three main functions in R that create the vector with the number of signals at each genomic segment (createSumMatrix), create the Id for each segment with the signal (createId) and finally extract the regions with a signal and compute reproducibile and not reproducible regions (getSignalContainingRegions):
 
@@ -67,7 +67,7 @@ where df1, df2, df3 and df4 are the matrix with the regions reproducible and not
 
 ![final score](https://user-images.githubusercontent.com/6462162/46009363-996acd00-c0bf-11e8-9dae-56426c72f764.png)
 
-###### Fig. 3) Converted reproducibility values for each protein used in the experiment for a particular cell type.
+###### Figure 3) Converted reproducibility values for each protein used in the experiment for a particular cell type.
 
 Afterwards, regions with at least one NA value were discarded and regions with a reproducibility score of 0, that we named noisy, are estimated computing a z-score and respective p.value after 1000 sampling of the reproducibility score matrix. Sampling is performed with the "sample" function in R.
  
@@ -81,7 +81,7 @@ Function 5) `simulated.pval(n.simulations,cutoff,real.value)`
 
 ![forgith](https://user-images.githubusercontent.com/6462162/46032674-9510d500-c0fc-11e8-8ddc-ea3971f1e075.png)
 
-###### Fig. 4) A null distribution is computed for each cell line by sampling the reproducibility score matrix of Fig3. Z-score and P.value is computed for each score. In the picture, represented are the statistical test for DNA regions with reproducibility score 0 (that we renamed Noisy).
+###### Figure 4) A null distribution is computed for each cell line by sampling the reproducibility score matrix of Fig3. Z-score and P.value is computed for each score. In the picture, represented are the statistical test for DNA regions with reproducibility score 0 (that we renamed Noisy).
 
 # Noisy regions prediction in mESC according to several DNA features
 We used the R package "randomforest" to check whether specific genomic regions were predictive of the noisy behaviour for the proteins under investigation. We used a pannel of published datasets and mapped the noisy regions to them. A null model was created with the package gkmSVM and the performance of the algorithm was checked with the package pROC.
@@ -93,7 +93,7 @@ The script can be run:
 ![modelrandom](https://user-images.githubusercontent.com/6462162/52270087-2ceebd00-2940-11e9-830a-45a90344beed.png)
 ![roc](https://user-images.githubusercontent.com/6462162/52270088-2ceebd00-2940-11e9-9a2b-723145fa4aa0.png)
 
-###### Fig. 5) Random forest algorithm predicts noisy regions in mESCs according to sevral features
+###### Figure 5) Random forest algorithm predicts noisy regions in mESCs according to sevral features
 
 
 # PCA in K562 cell lines with and without the noisy regions
@@ -104,10 +104,10 @@ The script can be run:
 
 
 ![with and without noise 1 na](https://user-images.githubusercontent.com/6462162/53089584-46316500-350d-11e9-83a0-0df5badf4d4f.png)
-###### Fig. 6) PCA shows an improvment in the separation of the replicates upon removal of the noisy regions
+###### Figure 6-A) PCA shows an improvment in the separation of the replicates upon removal of the noisy regions
 
 ![euclidian distance](https://user-images.githubusercontent.com/6462162/53090468-d4a6e600-350f-11e9-80f1-38e0fccfa7ae.png)
-###### Fig. 7) Euclidean distance of pairwise comparisons between replicates of the same protein show shorter distances upon removal of the noisy regions. This means that the replicates of the same group get closer to each other.
+###### Figure 6-B) Euclidean distance of pairwise comparisons between replicates of the same protein show shorter distances upon removal of the noisy regions. This means that the replicates of the same group get closer to each other.
 
 
 
