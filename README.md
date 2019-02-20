@@ -104,7 +104,7 @@ The script can be run:
 
 
 ![with and without noise 1 na](https://user-images.githubusercontent.com/6462162/53089584-46316500-350d-11e9-83a0-0df5badf4d4f.png)
-###### Figure 6-A) PCA shows an improvment in the separation of the replicates upon removal of the noisy regions
+###### Figure 6-A) PCA shows an improvment in the separation of the goups and respecitve replicates upon removal of the noisy regions
 
 ![euclidian distance](https://user-images.githubusercontent.com/6462162/53090468-d4a6e600-350f-11e9-80f1-38e0fccfa7ae.png)
 ###### Figure 6-B) Euclidean distance of pairwise comparisons between replicates of the same protein show shorter distances upon removal of the noisy regions. This means that the replicates of the same group get closer to each other.
