@@ -5,8 +5,7 @@ IPnoisy is a method capable to detect noisy DNA binding regions of several trans
 # Motivation
 ChIP-seq is a standard technology in wet laboratories because it allows to map the genomic regions in which a protein or transcription factor is binding the DNA. Regulatory genomics labs have extensively used this technique to describe how, where and which gene is under the control of a transcription factor. However, the extent of the reproducibility of the binding sites can be confounded by several factors, such as the genomic location in which the transcription factor binds, DNA structures present at the moment of the immunoprecipitation, quality of the antibody as also the experimental conditions in cell culture (2,3,7). For this we have developed IPnoisy, a method that can report noisy transcription factors binding sites from ChIP-seq data in a given cell type of interest. Here the workflow:  
 
-![workflow](https://user-images.githubusercontent.com/6462162/52263031-69192200-292e-11e9-9d6d-b4e7ca639eac.png)
-
+![workflow](https://user-images.githubusercontent.com/6462162/53089925-349c8d00-350e-11e9-87c6-a669741b9968.png)
 
 ###### Fig. 1) In the workflow: A) ENCODE experiments are selected according to standard parameters, B) peaks are mapped to genomic segments of a defined window size and a sliding window is used to compute a reproducibility score. C) Regions with a specific score are tested for significance and D) PCA is performed to check if the removal of the noisy regions can improve the explanation of the variability of  the samples. 
 
