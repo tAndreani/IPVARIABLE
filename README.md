@@ -7,7 +7,7 @@ ChIP-seq is a standard technology in wet laboratories because it allows to map t
 
 ![workflow](https://user-images.githubusercontent.com/6462162/53089925-349c8d00-350e-11e9-87c6-a669741b9968.png)
 
-###### Figure 1) In the workflow: A) ENCODE experiments are selected according to standard parameters, B) peaks are mapped to genomic segments of a defined window size and a sliding window is used to compute a reproducibility score. C) Regions with a specific score are tested for significance and D) PCA is performed to check if the removal of the noisy regions can improve the explanation of the variability of  the samples. 
+###### Figure 1) In the workflow: A) ENCODE experiments are selected according to standard parameters (see points from 1 to 6 in the experimental design paragraph), B) peaks are mapped to genomic segments of a defined window size and a sliding window is used to compute a reproducibility score. C) Regions with a specific score are tested for significance and D) PCA is performed to check if the removal of the noisy regions can improve the explanation of the variability of  the samples. 
 
 # Experimental Design: define suitable set of experiments from ENCODE project
 We selected ENCODE experiments for four different proteins according to the following standard criteria:  
