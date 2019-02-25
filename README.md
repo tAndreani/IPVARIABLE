@@ -67,7 +67,7 @@ Reproducible and not reproducible regions for all the proteins used in the exper
 Function 4) `ReproducibilityScoreMatrix(df1,df2,df3,df4)`  
 where df1, df2, df3 and df4 are the matrix with the regions reproducible and not reproducible for each protein
 
-![fig 2b](https://user-images.githubusercontent.com/6462162/53349913-5fc41980-391e-11e9-92d0-425900e442de.png)
+![fig 2b](https://user-images.githubusercontent.com/6462162/53352696-90f31880-3923-11e9-8c3e-9fd0bf93b490.png)
 
 ###### Figure 2-B) Reproducibility score matrix where rows show segments and columns show their conversion score for each protein (1 for segments in regions that are reproducible and 0 for segments in regions that are not reproducible) and a final reproducibility score (RS) defined as the average value of the row (or NA if more than 1 conversion score equals NA)
 
