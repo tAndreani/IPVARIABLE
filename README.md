@@ -39,7 +39,7 @@ Let n be the number of replicates for a given protein;
    let s be the segments for a given genome;
       let p be the number of peaks detected in a genomic segment;
           for every segment in s;
-              if in between two NA p is < n, then reproducibility score at	each segment is 0
+              if in between two NA p is < n, then reproducibility score at each segment is 0
                  else,
               reproducibility score at each segment is 1
       return a list of reproducible and not reproducible regions
