@@ -50,7 +50,7 @@ For our study n represents the number of replicates for each protein under inves
 
 ![fig 2a](https://user-images.githubusercontent.com/6462162/53350621-bb42d700-391f-11e9-89bc-fd092064ad3f.png)
 
-###### Figure 2) Steps to identify reproducible and not reproducible regions considering the boarder of each segment and then the tale of each peak for NCOR1 protein. The genome is scanned using a sliding window apporach. Regions that are in between segments with sum vector of 0 are defined as reproducible if the maximum value is three and not reproducible if the maximum value is lower than three.  
+###### Figure 2-A) Steps to identify reproducible and not reproducible regions considering the boarder of each segment and then the tale of each peak for NCOR1 protein. The genome is scanned using a sliding window apporach. Regions that are in between segments with sum vector of 0 are defined as reproducible if the maximum value is three and not reproducible if the maximum value is lower than three.  
 
 For this we have developed three main functions in R that create the vector with the number of signals at each genomic segment (createSumMatrix), create the Id for each segment with the signal (createId) and finally extract the regions with a signal and compute reproducibile and not reproducible regions (getSignalContainingRegions):
 
@@ -69,7 +69,7 @@ where df1, df2, df3 and df4 are the matrix with the regions reproducible and not
 
 ![fig 2b](https://user-images.githubusercontent.com/6462162/53349913-5fc41980-391e-11e9-92d0-425900e442de.png)
 
-###### Figure 3) Converted reproducibility values for each protein used in the experiment for a particular cell type.
+###### Figure 2-B) Reproducibility score matrix where rows show segments and columns show their conversion score for each protein (1 for segments in regions that are reproducible and 0 for segments in regions that are not reproducible) and a final reproducibility score (RS) defined as the average value of the row (or NA if more than 1 conversion score equals NA)
 
 Afterwards, regions with more than one NA value were discarded and regions with a reproducibility score of 0, that we named noisy, are estimated computing a z-score and respective p.value after 1000 sampling of the reproducibility score matrix. Sampling is performed with the "sample" function in R.
  
