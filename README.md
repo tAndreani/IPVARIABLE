@@ -105,7 +105,7 @@ The script can be run:
 `python pca.py ./matrix.tsv`  
 
 
-![with and without noise 1 na](https://user-images.githubusercontent.com/6462162/53089584-46316500-350d-11e9-83a0-0df5badf4d4f.png)
+![pca](https://user-images.githubusercontent.com/6462162/53353427-f267b700-3924-11e9-94d0-669962139ab5.png)
 ###### Figure 6-A) PCA shows an improvment in the separation of the groups and respecitve replicates upon removal of the noisy regions
 
 ![fig 6](https://user-images.githubusercontent.com/6462162/53353010-2c848900-3924-11e9-93dc-fb60b5137660.png)
