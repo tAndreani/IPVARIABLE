@@ -36,13 +36,13 @@ After the identification of suitable experiments and assigned the significant pe
 
 ```
 Let n be the number of replicates for a given protein;
-      let s be the segments for a given genome;
-            let p be the number of peaks detected in a genomic segment;
-                          for every segment in s;
-                                  if in between two NA p is < n, then reproducibility score at	each segment is 0
-                                      else,
-                                  reproducibility score at each segment is 1
-                          return a list of reproducible and not reproducible regions
+   let s be the segments for a given genome;
+      let p be the number of peaks detected in a genomic segment;
+          for every segment in s;
+              if in between two NA p is < n, then reproducibility score at	each segment is 0
+                 else,
+              reproducibility score at each segment is 1
+      return a list of reproducible and not reproducible regions
 ```
 
 For our study n represents the number of replicates for each protein under investigation in a given cell type, s the segments of the genome considering a window size of 200 base pairs, p is the number of peaks in every genomic segment. Consecutive segments with a signal reaching as a max value n are considered as reproducible regions and assigned with a value of 1. Opposite, consecutive segments with a signal reaching a max value lower than n are considered as not reproducible regions and assigned with a value of 0. The output is a table with a list of regions that are reproducible and not reproducible that will be further aggregated for all the protein under study. Schematic represenation can be observed in the Fig. 2 below.
@@ -67,7 +67,7 @@ Reproducible and not reproducible regions for all the proteins used in the exper
 Function 4) `ReproducibilityScoreMatrix(df1,df2,df3,df4)`  
 where df1, df2, df3 and df4 are the matrix with the regions reproducible and not reproducible for each protein
 
-![final score](https://user-images.githubusercontent.com/6462162/46009363-996acd00-c0bf-11e8-9dae-56426c72f764.png)
+![fig 2b](https://user-images.githubusercontent.com/6462162/53349913-5fc41980-391e-11e9-92d0-425900e442de.png)
 
 ###### Figure 3) Converted reproducibility values for each protein used in the experiment for a particular cell type.
 
