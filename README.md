@@ -36,17 +36,19 @@ After the identification of suitable experiments and assigned the significant pe
 
 ```
 Let n be the number of replicates for a given protein;
-     Let s be the segments for a genome;
-         Let p be the number of Peaks detected in the genomic segment;
-                for every segment in s;
-                    If max p is < n , then reproducibility value is 0
-                else  1
-         return a list of regions reproducible and not reproducible
+      let s be the segments for a given genome;
+            let p be the number of peaks detected in a genomic segment;
+                          for every segment in s;
+                                  if in between two NA p is < n, then reproducibility score at	each segment is 0
+                                      else,
+                                  reproducibility score at each segment is 1
+                          return a list of reproducible and not reproducible regions
 ```
 
 For our study n represents the number of replicates for each protein under investigation in a given cell type, s the segments of the genome considering a window size of 200 base pairs, p is the number of peaks in every genomic segment. Consecutive segments with a signal reaching as a max value n are considered as reproducible regions and assigned with a value of 1. Opposite, consecutive segments with a signal reaching a max value lower than n are considered as not reproducible regions and assigned with a value of 0. The output is a table with a list of regions that are reproducible and not reproducible that will be further aggregated for all the protein under study. Schematic represenation can be observed in the Fig. 2 below.
 
-![fig 2a](https://user-images.githubusercontent.com/6462162/52263210-d4fb8a80-292e-11e9-9235-488fa87071a3.png)
+!![fig 2a](https://user-images.githubusercontent.com/6462162/53349783-21c6f580-391e-11e9-9086-48f9ff19d347.png)
+
 
 ###### Figure 2) Steps to identify reproducible and not reproducible regions considering the boarder of each segment and then the tale of each peak for NCOR1 protein. The genome is scanned using a sliding window apporach. Regions that are in between segments with sum vector of 0 are defined as reproducible if the maximum value is three and not reproducible if the maximum value is lower than three.  
 
