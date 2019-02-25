@@ -61,7 +61,7 @@ Function 2) `createId`
 Function 3) `getSignalContaingRegions`
 
 
-# Reproducibility score matrix  
+# Reproducibility Score Matrix (RSM)
 Reproducible and not reproducible regions for all the proteins used in the experiments are aggregated in a reproducibility score matrix (Fig.3). 
 
 Function 4) `ReproducibilityScoreMatrix(df1,df2,df3,df4)`  
