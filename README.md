@@ -91,8 +91,11 @@ The script can be run:
 
 `Rstudio Random.Forest.r`
 
-![modelrandom](https://user-images.githubusercontent.com/6462162/52270087-2ceebd00-2940-11e9-830a-45a90344beed.png)
-![roc](https://user-images.githubusercontent.com/6462162/52270088-2ceebd00-2940-11e9-9a2b-723145fa4aa0.png)
+
+![roc for manuscript](https://user-images.githubusercontent.com/6462162/53503254-ff64e180-3aaf-11e9-8982-105edb3166cc.png)
+![model random](https://user-images.githubusercontent.com/6462162/53503321-1e637380-3ab0-11e9-81fe-0f05beb48838.png)
+
+
 
 ###### Figure 5) Random forest algorithm predicts noisy regions in mESCs according to sevral features
 
