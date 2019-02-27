@@ -94,9 +94,6 @@ The script can be run:
 
 ![roc for manuscript](https://user-images.githubusercontent.com/6462162/53503254-ff64e180-3aaf-11e9-8982-105edb3166cc.png)
 ![model random](https://user-images.githubusercontent.com/6462162/53503321-1e637380-3ab0-11e9-81fe-0f05beb48838.png)
-
-
-
 ###### Figure 5) Random forest algorithm predicts noisy regions in mESCs according to sevral features
 
 
@@ -106,12 +103,13 @@ We created a python script using pandas in order to perform the PCA and check wh
 The script can be run:  
 `python pca.py ./matrix.tsv`  
 
+![pca](https://user-images.githubusercontent.com/6462162/53353427-f267b700-3924-11e9-94d0-669962139ab5.png)
+###### Figure 6) PCA shows an improvment in the separation of the groups and respecitve replicates upon removal of the noisy regions 
+
 
 ![intra k562](https://user-images.githubusercontent.com/6462162/53503435-566ab680-3ab0-11e9-91fd-d223dfcaa127.png)
 ![dotplot](https://user-images.githubusercontent.com/6462162/53503476-68e4f000-3ab0-11e9-880c-bb21e75caf62.png)
-###### Figure 6) PCA shows an improvment in the separation of the groups and respecitve replicates upon removal of the noisy regions and Euclidean distance of pairwise comparisons between replicates of the same protein as a box plot and as a dot plot 
-
-
+###### Figure 7) Euclidean distance of pairwise comparisons between replicates of the same protein as a box plot and as a dot plot 
 
 # References
 1) Blackledge, N. P., Zhou, J. C., Tolstorukov, M. Y., Farcas, A. M., Park, P. J., & Klose, R. J. (2010). CpG Islands Recruit a Histone H3 Lysine 36 Demethylase. Molecular Cell, 38(2), 179–190. https://doi.org/10.1016/j.molcel.2010.04.009  
