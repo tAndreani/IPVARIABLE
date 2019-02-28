@@ -35,12 +35,12 @@ Segmentation of the genome and assignment of the peaks to genomics bins is perfo
 After the identification of suitable experiments and assigned the significant peaks to the genomic bins, we extracted reproducible and not reproducibile regions. We formalized the assignment of reproducible and not reproducible segments according to the following pseudo code rules:
 
 ```
-Let n be the number of replicates for a given protein;
-   let s be the segments for a given genome;
-      let p be the number of peaks detected in a genomic segment;
+Let N be the number of replicates for a given protein;
+   let S be the segments for a given genome;
+      let P be the number of peaks detected in a genomic segment;
           for every segment in s;
-              if p = 0, then assign an NA
-                 if in between two NA p is < n, then reproducibility score at each segment is 0
+              if P = 0, then assign an NA
+                 if in between two NA P is < N, then reproducibility score at each segment is 0
                     else,
               reproducibility score at each segment is 1
       return several lists of reproducible and not reproducible regions where a region is defined as consecutive segments
