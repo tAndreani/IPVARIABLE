@@ -48,7 +48,8 @@ Let N be the number of replicates for a given protein;
 
 For our study n represents the number of replicates for each protein under investigation in a given cell type, s the segments of the genome considering a window size of 200 base pairs, p is the number of peaks in every genomic segment. Consecutive segments with a signal reaching as a max value n are considered as reproducible regions and assigned with a value of 1. Opposite, consecutive segments with a signal reaching a max value lower than n are considered as not reproducible regions and assigned with a value of 0. The output is a table with a list of regions that are reproducible and not reproducible that will be further aggregated for all the protein under study. Schematic represenation can be observed in the Fig. 2 below.
 
-![fig 2a](https://user-images.githubusercontent.com/6462162/53350621-bb42d700-391f-11e9-89bc-fd092064ad3f.png)
+
+![fig 2a](https://user-images.githubusercontent.com/6462162/53745203-d755f380-3e9e-11e9-994a-1261e955e79b.png)
 
 ###### Figure 2-A) Steps to identify reproducible and not reproducible regions considering the boarder of each segment and then the tale of each peak for NCOR1 protein. The genome is scanned using a sliding window apporach. Regions that are in between segments with sum vector of 0 are defined as reproducible if the maximum value is three and not reproducible if the maximum value is lower than three.  
 
