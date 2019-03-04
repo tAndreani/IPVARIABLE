@@ -36,14 +36,13 @@ After the identification of suitable experiments and assigned the significant pe
 
 ```
 Let N be the number of replicates for a given protein;
-   let S be the segments for a given genome;
-      let P be the number of peaks detected in a genomic segment;
-          for every segment in s;
-              if P = 0, then assign an NA
-                 if in between two NA P is < N, then reproducibility score at each segment is 0
-                    else,
-              reproducibility score at each segment is 1
-      return several lists of reproducible and not reproducible regions where a region is defined as consecutive segments
+Let S be the segments for a given genome;
+Let P be the number of peaks detected in a genomic segment;
+    for every segment in s;
+        if P = 0, then assign an NA
+        if in between two NA P is < N, then reproducibility score at each segment is 0
+              else,
+        reproducibility score at each segment is 1
 ```
 
 For our study n represents the number of replicates for each protein under investigation in a given cell type, s the segments of the genome considering a window size of 200 base pairs, p is the number of peaks in every genomic segment. Consecutive segments with a signal reaching as a max value n are considered as reproducible regions and assigned with a value of 1. Opposite, consecutive segments with a signal reaching a max value lower than n are considered as not reproducible regions and assigned with a value of 0. The output is a table with a list of regions that are reproducible and not reproducible that will be further aggregated for all the protein under study. Schematic represenation can be observed in the Fig. 2 below.
