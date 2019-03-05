@@ -1,4 +1,4 @@
-# IPnoisy: a method to estimate noisy transcription factor binding sites from replicated experiments 
+# Computational identification of noisy regions in ChIP-seq data
 IPnoisy is a method capable to detect noisy DNA binding regions of several transcription factors in a given cell type. It takes in input ChIP-seq peaks and outputs the noisy ones that tend to be not reproducible. It can be useful to use this method in case a wet lab has obtained peaks from ChIP-seq expriments and wants to know their reliability before downstream interpretative analysis and/or experimental follow up. The method can be extended also to other sequencing techniques that use replicated experiments such as for example ATAC-seq.
 
 
