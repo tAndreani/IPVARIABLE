@@ -83,7 +83,7 @@ Function 5) `simulated.pval(n.simulations,cutoff,real.value)`
 
 ![forgith](https://user-images.githubusercontent.com/6462162/46032674-9510d500-c0fc-11e8-8ddc-ea3971f1e075.png)
 
-###### Figure 4) A null distribution is computed for each cell line by sampling the reproducibility score matrix of Fig3. Z-score and P.value is computed for each score. In the picture, represented are the statistical test for DNA regions with reproducibility score 0 (that we renamed Noisy).
+###### Figure 3) A null distribution is computed for each cell line by sampling the reproducibility score matrix of Fig3. Z-score and P.value is computed for each score. In the picture, represented are the statistical test for DNA regions with reproducibility score 0 (that we renamed Noisy).
 
 # Noisy regions prediction in mESC according to several DNA features
 We used the R package "randomforest" to check whether specific genomic regions were predictive of the noisy behaviour for the proteins under investigation. We used a pannel of published datasets and mapped the noisy regions to them. A null model was created with the package gkmSVM and the performance of the algorithm was checked with the package pROC.
@@ -95,7 +95,7 @@ The script can be run:
 
 ![roc for manuscript](https://user-images.githubusercontent.com/6462162/53503254-ff64e180-3aaf-11e9-8982-105edb3166cc.png)
 ![model random](https://user-images.githubusercontent.com/6462162/53503321-1e637380-3ab0-11e9-81fe-0f05beb48838.png)
-###### Figure 5) Random forest algorithm predicts noisy regions in mESCs according to sevral features
+###### Figure 4) Random forest algorithm predicts noisy regions in mESCs according to sevral features
 
 
 # PCA in K562 cell lines with and without the noisy regions
@@ -105,12 +105,12 @@ The script can be run:
 `python pca.py ./matrix.tsv`  
 
 ![pca](https://user-images.githubusercontent.com/6462162/53353427-f267b700-3924-11e9-94d0-669962139ab5.png)
-###### Figure 6) PCA shows an improvment in the separation of the groups and respecitve replicates upon removal of the noisy regions 
+###### Figure 5) PCA shows an improvment in the separation of the groups and respecitve replicates upon removal of the noisy regions 
 
 
 ![intra k562](https://user-images.githubusercontent.com/6462162/53503435-566ab680-3ab0-11e9-91fd-d223dfcaa127.png)
 ![dotplot](https://user-images.githubusercontent.com/6462162/53503476-68e4f000-3ab0-11e9-880c-bb21e75caf62.png)
-###### Figure 7) Euclidean distance of pairwise comparisons between replicates of the same protein as a box plot and as a dot plot 
+###### Figure 6) Euclidean distance of pairwise comparisons between replicates of the same protein as a box plot and as a dot plot 
 
 # References
 1) Blackledge, N. P., Zhou, J. C., Tolstorukov, M. Y., Farcas, A. M., Park, P. J., & Klose, R. J. (2010). CpG Islands Recruit a Histone H3 Lysine 36 Demethylase. Molecular Cell, 38(2), 179–190. https://doi.org/10.1016/j.molcel.2010.04.009  
