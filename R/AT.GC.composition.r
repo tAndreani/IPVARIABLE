@@ -35,4 +35,49 @@ ggplot(definitive.CG, aes(CG, fill = condition)) + geom_density(alpha = 0.4) + x
   ggtitle("CG Percentage in the Noisy regions and random control regions in mESC \n p-value = 2.51e-20 ") +
   theme(plot.title = element_text(hjust = 0.5))
 
+#################################
+#AT and CG Genomes hg19 and mm10#
+#################################
 
+library(ggplot2)
+
+rm(list=ls())
+setwd("D:/PhD/ChIP.Update.Experiments/Prediction.Noisy.mESCs/CG.contents/")
+all.genome.CG <- read.table("mm10.chr.size.nuc",header = F)
+all.genome.CG$fraction <- all.genome.CG$V5
+all.genome.AT <- read.table("mm10.chr.size.nuc",header = F)
+all.genome.AT$fraction <- all.genome.AT$V4
+str(t.test(all.genome.CG$fraction,all.genome.AT$fraction))
+
+all.genome.AT$condition <- 'AT.rich'
+all.genome.CG$condition <- 'GC.rich'
+head(all.genome.AT)
+head(all.genome.CG)
+
+definitive <- rbind(all.genome.AT[,14:13],all.genome.CG[,14:13])
+head(definitive)
+ggplot(definitive, aes(fraction, fill = condition)) + geom_density(alpha = 0.4) + xlim(0,1) +
+  ggtitle("GC and AT fractions in the mouse mm10 Genome p-value = 5.33e-31 ") +
+  theme(plot.title = element_text(hjust = 0.5))
+
+
+###Compute the bandability of the DNA
+install.packages("DNAshapeR")
+
+setwd("D:/PhD/ChIP.Update.Experiments/All.Noisy.2.Replicates/")
+all.genome.CG <- read.table("CG.composition.hg19.txt",header = F)
+all.genome.CG$fraction <- all.genome.CG$V5
+all.genome.AT <- read.table("CG.composition.hg19.txt",header = F)
+all.genome.AT$fraction <- all.genome.AT$V4
+str(t.test(all.genome.CG$fraction,all.genome.AT$fraction))
+
+all.genome.AT$condition <- 'AT.rich'
+all.genome.CG$condition <- 'GC.rich'
+head(all.genome.AT)
+head(all.genome.CG)
+
+definitive <- rbind(all.genome.AT[,14:13],all.genome.CG[,14:13])
+head(definitive)
+ggplot(definitive, aes(fraction, fill = condition)) + geom_density(alpha = 0.4) + xlim(0,1) +
+  ggtitle("GC and AT fractions in the hg19 Genome p-value = 2.54e-09 ") +
+  theme(plot.title = element_text(hjust = 0.5))
