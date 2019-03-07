@@ -40,7 +40,7 @@ ggplot(definitive.CG, aes(CG, fill = condition)) + geom_density(alpha = 0.4) + x
 #################################
 
 library(ggplot2)
-
+#mm10
 rm(list=ls())
 setwd("D:/PhD/ChIP.Update.Experiments/Prediction.Noisy.mESCs/CG.contents/")
 all.genome.CG <- read.table("mm10.chr.size.nuc",header = F)
@@ -62,8 +62,7 @@ ggplot(definitive, aes(fraction, fill = condition)) + geom_density(alpha = 0.4) 
 
 
 ###Compute the bandability of the DNA
-install.packages("DNAshapeR")
-
+#Hg19
 setwd("D:/PhD/ChIP.Update.Experiments/All.Noisy.2.Replicates/")
 all.genome.CG <- read.table("CG.composition.hg19.txt",header = F)
 all.genome.CG$fraction <- all.genome.CG$V5
