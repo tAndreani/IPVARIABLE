@@ -1,6 +1,8 @@
 # Computational identification of noisy regions in ChIP-seq data
 In this work we provide a method capable to detect noisy DNA binding regions of several transcription factors in a given cell type. The method takes in input ChIP-seq peaks and outputs the noisy ones that tend to be not reproducible. It can be useful to use this method in case a wet lab has obtained peaks from ChIP-seq expriments and wants to know their reliability before downstream interpretative analysis and/or experimental follow up. The method can be extended also to other sequencing techniques that use replicated experiments for example, ATAC-seq from multiple cell types in developmental studies.  
 
+### Manuscript in Revision in Nucleic Acid Research: Computational Identification of Noisy Regions in ChIP-seq data. Andreani, Albrecht, Fontaine and Andrade-Navarro
+
 
 # Motivation
 ChIP-seq is a standard technology in wet laboratories because it allows to map the genomic regions in which a protein or transcription factor is binding the DNA. Regulatory genomics labs have extensively used this technique to describe how, where and which gene is under the control of a transcription factor. However, the extent of the reproducibility of the binding sites can be confounded by several factors, such as the genomic location in which the transcription factor binds, DNA structures present at the moment of the immunoprecipitation, quality of the antibody as also the experimental conditions in cell culture (1,2,3). For this we have developed a method that can report noisy transcription factors binding sites from ChIP-seq data in a given cell type of interest. Here the workflow:  
