@@ -97,7 +97,7 @@ The script can be run:
 
 ![roc for manuscript](https://user-images.githubusercontent.com/6462162/53503254-ff64e180-3aaf-11e9-8982-105edb3166cc.png)
 ![model random](https://user-images.githubusercontent.com/6462162/53503321-1e637380-3ab0-11e9-81fe-0f05beb48838.png)
-###### Figure 4) Random forest algorithm predicts noisy regions in mESCs according to sevral features
+###### Figure 4) Random forest algorithm predicts noisy regions in mESCs according to several features
 
 
 # PCA in K562 cell lines with and without the noisy regions
