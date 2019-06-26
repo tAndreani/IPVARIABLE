@@ -85,7 +85,7 @@ Function 5) `simulated.pval(n.simulations,cutoff,real.value)`
 
 ![forgith](https://user-images.githubusercontent.com/6462162/46032674-9510d500-c0fc-11e8-8ddc-ea3971f1e075.png)
 
-###### Figure 3) A null distribution is computed for each cell line by sampling the reproducibility score matrix of Fig3. Z-score and P.value is computed for each score. In the picture, represented are the statistical test for DNA regions with reproducibility score 0 (that we renamed Noisy).
+###### Figure 3) A null distribution is computed for each cell line by sampling the reproducibility score matrix of Fig2-B. Z-score and P.value is computed for each score. In the picture, represented are the statistical test for DNA regions with reproducibility score 0 (that we renamed Noisy).
 
 # Noisy regions prediction in mESC according to several DNA features
 We used the R package "randomforest" to check whether specific genomic regions were predictive of the noisy behaviour for the proteins under investigation. We used a pannel of published datasets and mapped the noisy regions to them. A null model was created with the package gkmSVM and the performance of the algorithm was checked with the package pROC.
