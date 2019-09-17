@@ -115,43 +115,23 @@ The script can be run:
 ###### Figure 6) Euclidean distance of pairwise comparisons between replicates of the same protein as a box plot and as a dot plot 
 
 # References
-1. Teytelman, L., Thurtle, D. M., Rine, J., & van Oudenaarden, A. (2013). Highly expressed loci
-are vulnerable to misleading ChIP localization of multiple unrelated proteins. Proceedings of
-the National Academy of Sciences, 110(46), 18602–18607.  
-2. Jain, D., Baldi, S., Zabel, A., Straub, T., & Becker, P. B. (2015). Active promoters give rise to
-false positive “Phantom Peaks” in ChIP-seq experiments. Nucleic Acids Research, 43(14),
-6959–6968.  
-3. Wreczycka, K., Franke, V., Uyar, B., Wurmus, R., & Akalin, A. (2017). HOT or not: Examining
-the basis of high-occupancy target regions. bioRxiv, 107680.  
-4. Landt, S. G., Marinov, G. K., Kundaje, A., Kheradpour, P., Pauli, F., Batzoglou, S., ... & Chen,
-Y. (2012). ChIP-seq guidelines and practices of the ENCODE and modENCODE
-consortia. Genome research, 22(9), 1813-1831.  
-5. Li, Q., Brown, J. B., Huang, H., & Bickel, P. J. (2011). Measuring reproducibility of highthroughput experiments. Annals of Applied Statistics, 5(3), 1752–1779.  
-6. Sanz, L. A., Hartono, S. R., Lim, Y. W., Steyaert, S., Rajpurkar, A., Ginno, P. A., ... & Chédin,
-F. (2016). Prevalent, dynamic, and conserved R-loop structures associate with specific
-epigenomic signatures in mammals. Molecular cell, 63(1), 167-178.  
-7. Quinlan, A. R., & Hall, I. M. (2010). BEDTools: A flexible suite of utilities for comparing
-genomic features. Bioinformatics, 26(6), 841–842.  
-8. Shen, L., Wu, H., Diep, D., Yamaguchi, S., D’Alessio, A. C., Fung, H. L., ... & Zhang, Y.
-(2013). Genome-wide analysis reveals TET-and TDG-dependent 5-methylcytosine oxidation
-dynamics. Cell, 153(3), 692-706.  
-9. Whyte, W. A., Bilodeau, S., Orlando, D. A., Hoke, H. A., Frampton, G. M., Foster, C. T., ... &
-Young, R. A. (2012). Enhancer decommissioning by LSD1 during embryonic stem cell
-differentiation. Nature, 482(7384), 221.  
-10. Stadler, M. B., Murr, R., Burger, L., Ivanek, R., Lienert, F., Schöler, A., ... & Tiwari, V. K.
-(2011). DNA-binding factors shape the mouse methylome at distal regulatory
-regions. Nature, 480(7378), 490.  
-11. Ghandi, M., Mohammad-Noori, M., Ghareghani, N., Lee, D., Garraway, L., & Beer, M. A.
-(2016). gkmSVM: an R package for gapped-kmer SVM. Bioinformatics, 32(14), 2205-2207.  
-12. Ramachandran, P., Palidwor, G. A., & Perkins, T. J. (2015). BIDCHIPS: bias decomposition
-and removal from ChIP-seq data clarifies true binding signal and its functional
-correlates. Epigenetics & chromatin, 8(1), 33.  
-13. Khan, A., Fornes, O., Stigliani, A., Gheorghe, M., Castro-Mondragon, J. A., van der Lee, R., ...
-& Baranasic, D. (2017). JASPAR 2018: update of the open-access database of transcription
-factor binding profiles and its web framework. Nucleic acids research, 46(D1), D260-D266.  
-14. Neri, F., Incarnato, D., Krepelova, A., Rapelli, S., Anselmi, F., Parlato, C., ... & Oliviero, S.
-(2015). Single-base resolution analysis of 5-formyl and 5-carboxyl cytosine reveals promoter
-DNA methylation dynamics. Cell reports, 10(5), 674-683.  
-15. Park, P. J. (2009). ChIP–seq: advantages and challenges of a maturing technology. Nature
-reviews genetics, 10(10), 669.  
-16. Park, D., Lee, Y., Bhupindersingh, G., & Iyer, V. R. (2013). Widespread misinterpretable ChIPseq bias in yeast. PloS one, 8(12), e83506.  
+1. Teytelman, L., Thurtle, D. M., Rine, J., & van Oudenaarden, A. (2013). Highly expressed loci are vulnerable to misleading ChIP localization of multiple unrelated proteins. Proceedings of the National Academy of Sciences, 110(46), 18602–18607.  
+2. Jain, D., Baldi, S., Zabel, A., Straub, T., & Becker, P. B. (2015). Active promoters give rise to false positive “Phantom Peaks” in ChIP-seq experiments. Nucleic Acids Research, 43(14), 6959–6968.  
+3. Wreczycka K., F. Vedran, U. Bora, R. Wurmus, S. Bulut, B. Tursun, A. Akalin (2019). HOT or not: examining the basis of high-occupancy target regions, Nucleic Acids Research, 47(11), 5735-5745.  
+4. Landt, S. G., Marinov, G. K., Kundaje, A., Kheradpour, P., Pauli, F., Batzoglou, S., ... & Chen, Y. (2012). ChIP-seq guidelines and practices of the ENCODE and modENCODE consortia. Genome research, 22(9), 1813-1831.  
+5. Li, Q., Brown, J. B., Huang, H., & Bickel, P. J. (2011). Measuring reproducibility of high-throughput experiments. Annals of Applied Statistics, 5(3), 1752–1779.  
+6. Sanz, L. A., Hartono, S. R., Lim, Y. W., Steyaert, S., Rajpurkar, A., Ginno, P. A., ... & Chédin, F. (2016). Prevalent, dynamic, and conserved R-loop structures associate with specific epigenomic signatures in mammals. Molecular cell, 63(1), 167-178.  
+7. Quinlan, A. R., & Hall, I. M. (2010). BEDTools: A flexible suite of utilities for comparing genomic features. Bioinformatics, 26(6), 841–842.  
+8. Shen, L., Wu, H., Diep, D., Yamaguchi, S., D’Alessio, A. C., Fung, H. L., ... & Zhang, Y. (2013). Genome-wide analysis reveals TET-and TDG-dependent 5-methylcytosine oxidation dynamics. Cell, 153(3), 692-706.  
+9. Whyte, W. A., Bilodeau, S., Orlando, D. A., Hoke, H. A., Frampton, G. M., Foster, C. T., ... & Young, R. A. (2012). Enhancer decommissioning by LSD1 during embryonic stem cell differentiation. Nature, 482(7384), 221.  
+10. Stadler, M. B., Murr, R., Burger, L., Ivanek, R., Lienert, F., Schöler, A., ... & Tiwari, V. K. (2011). DNA-binding factors shape the mouse methylome at distal regulatory regions. Nature, 480(7378), 490.  
+11. Ghandi, M., Mohammad-Noori, M., Ghareghani, N., Lee, D., Garraway, L., & Beer, M. A. (2016). gkmSVM: an R package for gapped-kmer SVM. Bioinformatics, 32(14), 2205-2207.  
+12. Ramachandran, P., Palidwor, G. A., & Perkins, T. J. (2015). BIDCHIPS: bias decomposition and removal from ChIP-seq data clarifies true binding signal and its functional correlates. Epigenetics & chromatin, 8(1), 33.  
+13. Khan, A., Fornes, O., Stigliani, A., Gheorghe, M., Castro-Mondragon, J. A., van der Lee, R., .. & Baranasic, D. (2017). JASPAR 2018: update of the open-access database of transcription factor binding profiles and its web framework. Nucleic acids research, 46(D1), D260-D266.  
+14. Neri, F., Incarnato, D., Krepelova, A., Rapelli, S., Anselmi, F., Parlato, C., ... & Oliviero, S. (2015). Single-base resolution analysis of 5-formyl and 5-carboxyl cytosine reveals promoter DNA methylation dynamics. Cell reports, 10(5), 674-683.  
+15. Park, P. J. (2009). ChIP–seq: advantages and challenges of a maturing technology. Nature reviews genetics, 10(10), 669.  
+16.  Park, D., Lee, Y., Bhupindersingh, G., & Iyer, V. R. (2013). Widespread misinterpretable ChIP-seq bias in yeast. PloS one, 8(12), e83506.  
+17.  Mourad, Raphaël, et al. "Predicting double-strand DNA breaks using epigenome marks or DNA at kilobase resolution." Genome biology 19.1 (2018): 34.  
+18. Xie D., Dan X., Boyle A.P., Linfeng W., Jie Z., Trupti K. et al. . Dynamic trans-acting factor colocalization in human cells. Cell. 2013; 155:713–724.  
+19. Boyle A.P., Araya C.L., Cathleen B., Philip C., Chao C., Yong C., Gardner K., Hillier L.W., Janette J., Jiang L. et al. . Comparative analysis of regulatory information and circuits across distant species. Nature. 2014; 512:453–456.  
+20. Haley M. Amemiya, Anshul Kundaje and Alan P. Boyle. The ENCODE Blacklist: Identification of Problematic Regions of the Genome. Scientific Reports 9.1 (2019): 9354.  
