@@ -1,15 +1,15 @@
 # Computational identification of Variable regions in ChIP-seq data
-In this work we provide a method capable to detect noisy DNA binding regions of several transcription factors in a given cell type. The method takes in input ChIP-seq peaks and outputs the noisy ones that tend to be not reproducible. It can be useful to use this method in case a wet lab has obtained peaks from ChIP-seq expriments and wants to know their reliability before downstream interpretative analysis and/or experimental follow up. The method can be extended also to other sequencing techniques that use replicated experiments for example, ATAC-seq from multiple cell types in developmental studies.  
+In this work we provide a method capable to detect variable DNA binding regions of several transcription factors in a given cell type. The method takes in input ChIP-seq peaks and outputs the noisy ones that tend to be not reproducible. It can be useful to use this method in case a wet lab has obtained peaks from ChIP-seq expriments and wants to know their reliability before downstream interpretative analysis and/or experimental follow up. The method can be extended also to other sequencing techniques that use replicated experiments for example, ATAC-seq from multiple cell types in developmental studies.  
 
 ##### Manuscript in Revision in Nucleic Acid Research: "Computational Identification of Variable Regions in ChIP-seq data". T. Andreani, S. Albrecht, J.F. Fontaine and MA. Andrade-Navarro
 
 
 # Motivation
-ChIP-seq is a standard technology in wet laboratories because it allows to map the genomic regions in which a protein or transcription factor is binding the DNA. Regulatory genomics labs have extensively used this technique to describe how, where and which gene is under the control of a transcription factor. However, the extent of the reproducibility of the binding sites can be confounded by several factors, such as the genomic location in which the transcription factor binds, DNA structures present at the moment of the immunoprecipitation, quality of the antibody as also the experimental conditions in cell culture (1,2,3). For this we have developed a method that can report noisy transcription factors binding sites from ChIP-seq data in a given cell type of interest. Here the workflow:  
+ChIP-seq is a standard technology in wet laboratories because it allows to map the genomic regions in which a protein or transcription factor is binding the DNA. Regulatory genomics labs have extensively used this technique to describe how, where and which gene is under the control of a transcription factor. However, the extent of the reproducibility of the binding sites can be confounded by several factors, such as the genomic location in which the transcription factor binds, DNA structures present at the moment of the immunoprecipitation, quality of the antibody as also the experimental conditions in cell culture (1,2,3). For this we have developed a method that can report variable transcription factors binding sites from ChIP-seq data in a given cell type of interest. Here the workflow:  
 
 ![workflow](https://user-images.githubusercontent.com/6462162/53744700-cd7fc080-3e9d-11e9-9eb0-247451da094b.png)
 
-###### Figure 1) In the workflow: A) ENCODE experiments are selected according to standard parameters (see points from 1 to 6 in the experimental design paragraph), B) peaks are mapped to genomic segments of a defined window size and a sliding window is used to compute a reproducibility score. C) Regions with a specific score are tested for significance and D) PCA is performed to check if the removal of the noisy regions can improve the explanation of the variability of  the samples. 
+###### Figure 1) In the workflow: A) ENCODE experiments are selected according to standard parameters (see points from 1 to 6 in the experimental design paragraph), B) peaks are mapped to genomic segments of a defined window size and a sliding window is used to compute a reproducibility score. C) Regions with a specific score are tested for significance and D) PCA is performed to check if the removal of the variable regions can improve the explanation of the variability of  the samples. 
 
 # Experimental Design: define suitable set of experiments from ENCODE project
 We selected ENCODE experiments for four different proteins according to the following standard criteria:  
@@ -73,10 +73,10 @@ where df1, df2, df3 and df4 are the matrix with the regions reproducible and not
 ![rsm](https://user-images.githubusercontent.com/6462162/53360397-b9840e00-3935-11e9-87cf-f577b7b8cb6d.png)
 ###### Figure 2-B) Reproducibility Score Matrix where rows show segments and columns show their conversion score for each protein (1 for segments in regions that are reproducible and 0 for segments in regions that are not reproducible) and a final reproducibility score (RS) defined as the average value of the row (or NA if more than 1 conversion score equals NA)
 
-Afterwards, regions with more than one NA value were discarded and regions with a reproducibility score of 0, that we named noisy, are estimated computing a z-score and respective p.value after 1000 sampling of the reproducibility score matrix. Sampling is performed with the "sample" function in R.
+Afterwards, regions with more than one NA value were discarded and regions with a reproducibility score of 0, that we named variable, are estimated computing a z-score and respective p.value after 1000 sampling of the reproducibility score matrix. Sampling is performed with the "sample" function in R.
  
 
-# Noisy regions estimation in K562, GM12878, HepG2 and MCF-7 cell lines
+# variable regions estimation in K562, GM12878, HepG2 and MCF-7 cell lines
 
 A statistical test was computed based on to the computation of a z-score and p.value using 1000 randomizations:  
 
@@ -85,10 +85,10 @@ Function 5) `simulated.pval(n.simulations,cutoff,real.value)`
 
 ![forgith](https://user-images.githubusercontent.com/6462162/46032674-9510d500-c0fc-11e8-8ddc-ea3971f1e075.png)
 
-###### Figure 3) A null distribution is computed for each cell line by sampling the reproducibility score matrix of Fig2-B. Z-score and P.value is computed for each score. In the picture, represented are the statistical test for DNA regions with reproducibility score 0 (that we renamed Noisy).
+###### Figure 3) A null distribution is computed for each cell line by sampling the reproducibility score matrix of Fig2-B. Z-score and P.value is computed for each score. In the picture, represented are the statistical test for DNA regions with reproducibility score 0 (that we renamed variable).
 
-# Noisy regions prediction in mESC according to several DNA features
-We used the R package "randomforest" to check whether specific genomic regions were predictive of the noisy behaviour for the proteins under investigation. We used a pannel of published datasets and mapped the noisy regions to them. A null model was created with the package gkmSVM and the performance of the algorithm was checked with the package pROC.
+# Variable regions prediction in mESC according to several DNA features
+We used the R package "randomforest" to check whether specific genomic regions were predictive of the variable behaviour for the proteins under investigation. We used a pannel of published datasets and mapped the variable regions to them. A null model was created with the package gkmSVM and the performance of the algorithm was checked with the package pROC.
 
 The script can be run:  
 
@@ -97,17 +97,17 @@ The script can be run:
 
 ![roc for manuscript](https://user-images.githubusercontent.com/6462162/53503254-ff64e180-3aaf-11e9-8982-105edb3166cc.png)
 ![model random](https://user-images.githubusercontent.com/6462162/53503321-1e637380-3ab0-11e9-81fe-0f05beb48838.png)
-###### Figure 4) Random forest algorithm predicts noisy regions in mESCs according to several features
+###### Figure 4) Random forest algorithm predicts variable regions in mESCs according to several features
 
 
-# PCA in K562 cell lines with and without the noisy regions
-We created a python script using pandas in order to perform the PCA and check whether the removal of noisy peaks improves the separation of the replicates in the PCA.  
+# PCA in K562 cell lines with and without the variable regions
+We created a python script using pandas in order to perform the PCA and check whether the removal of variable peaks improves the separation of the replicates in the PCA.  
 
 The script can be run:  
 `python pca.py ./matrix.tsv`  
 
 ![pca](https://user-images.githubusercontent.com/6462162/53353427-f267b700-3924-11e9-94d0-669962139ab5.png)
-###### Figure 5) PCA shows an improvment in the separation of the groups and respecitve replicates upon removal of the noisy regions 
+###### Figure 5) PCA shows an improvment in the separation of the groups and respecitve replicates upon removal of the variable regions 
 
 
 ![intra k562](https://user-images.githubusercontent.com/6462162/53503435-566ab680-3ab0-11e9-91fd-d223dfcaa127.png)
