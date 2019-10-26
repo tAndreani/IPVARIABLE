@@ -71,7 +71,7 @@ Function 4) `ReproducibilityScoreMatrix(df1,df2,df3,df4)`
 where df1, df2, df3 and df4 are the matrix with the regions reproducible and not reproducible for each protein
 
 ![rsm](https://user-images.githubusercontent.com/6462162/53360397-b9840e00-3935-11e9-87cf-f577b7b8cb6d.png)
-###### Figure 2-B) Reproducibility Score Matrix where rows show segments and columns show their conversion score for each protein (1 for segments in regions that are reproducible and 0 for segments in regions that are not reproducible) and a final reproducibility score (RS) defined as the average value of the row (or NA if more than 1 conversion score equals NA)
+###### Figure 2-B) Reproducibility Score Matrix where rows show segments and columns show their conversion score for each protein (1 for segments in regions that are reproducible and 0 for segments in regions that are not reproducible) and a final score (FS) defined as the average value of the row (or NA if more than 1 conversion score equals NA)
 
 Afterwards, regions with more than one NA value were discarded and regions with a reproducibility score of 0, that we named variable, are estimated computing a z-score and respective p.value after 1000 sampling of the reproducibility score matrix. Sampling is performed with the "sample" function in R.
  
