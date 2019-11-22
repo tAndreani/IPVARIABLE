@@ -2,13 +2,11 @@ rm(list=ls())
 
 # generates null sequences (negative set) with matching repeat and GC content
 ibrary(gkmSVM)
-library(BSgenome.Hsapiens.UCSC.hg38)
-library(BSgenome.Hsapiens.UCSC.hg38.masked)
-library(IRanges)
-
 library(BSgenome.Hsapiens.UCSC.hg19)
+library(BSgenome.Hsapiens.UCSC.hg19.masked)
 library(gkmSVM)
 library(IRanges)
+
 genome=BSgenome.Hsapiens.UCSC.hg19.masked
 fileBed="Variable_Regions.bed"
 fileFasta="Variable_Regions.fa"
