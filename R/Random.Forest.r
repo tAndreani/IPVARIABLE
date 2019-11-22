@@ -2,7 +2,7 @@ rm(list=ls())
 
 # generates null sequences (negative set) with matching repeat and GC content
 library(gkmSVM)
-library(BSgenome.Mmusculus.UCSC.hg199.masked)
+library(BSgenome.Mmusculus.UCSC.hg19.masked)
 genNullSeqs('variable_regions.bed', outputBedFN = 'variable_regions_negSet.bed', outputPosFastaFN = 'variable_regions__posSet.fa',outputNegFastaFN = 'variable_regions_negSet.fa' , genome = BSgenome.Mmusculus.UCSC.hg19.masked);
 
 
