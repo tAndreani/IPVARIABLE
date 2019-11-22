@@ -10,10 +10,10 @@ library(BSgenome.Hsapiens.UCSC.hg19)
 library(gkmSVM)
 library(IRanges)
 genome=BSgenome.Hsapiens.UCSC.hg19.masked
-fileBed="BC10045537"
-fileFasta="BC10045537.fa"
-fileNullBed="BC10045537_Null"
-fileNullFasta="BC10045537_Null.fa"
+fileBed="Variable_Regions.bed"
+fileFasta="Variable_Regions.fa"
+fileNullBed="Variable_Regions_null.bed"
+fileNullFasta="Variable_Regions_Null.fa"
 genNullSeqs(inputBedFN=fileBed,nMaxTrials=5,xfold=2,genome=genome,outputPosFastaFN=fileFasta,outputBedFN=fileNullBed,outputNegFastaFN=fileNullFasta)
 
 
