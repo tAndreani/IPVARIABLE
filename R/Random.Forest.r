@@ -1,11 +1,20 @@
 rm(list=ls())
 
 # generates null sequences (negative set) with matching repeat and GC content
+ibrary(gkmSVM)
+library(BSgenome.Hsapiens.UCSC.hg38)
+library(BSgenome.Hsapiens.UCSC.hg38.masked)
+library(IRanges)
+
+library(BSgenome.Hsapiens.UCSC.hg19)
 library(gkmSVM)
-library(BSgenome.Mmusculus.UCSC.hg19.masked)
-genNullSeqs('variable_regions.bed', outputBedFN = 'variable_regions_negSet.bed', outputPosFastaFN = 'variable_regions__posSet.fa',outputNegFastaFN = 'variable_regions_negSet.fa' , genome = BSgenome.Mmusculus.UCSC.hg19.masked);
-
-
+library(IRanges)
+genome=BSgenome.Hsapiens.UCSC.hg19.masked
+fileBed="BC10045537"
+fileFasta="BC10045537.fa"
+fileNullBed="BC10045537_Null"
+fileNullFasta="BC10045537_Null.fa"
+genNullSeqs(inputBedFN=fileBed,nMaxTrials=5,xfold=2,genome=genome,outputPosFastaFN=fileFasta,outputBedFN=fileNullBed,outputNegFastaFN=fileNullFasta)
 
 
 
