@@ -48,7 +48,7 @@ for every segment in S;
    reproducibility score at each segment is 1
 ```
 
-For our study N represents the number of replicates for each protein under investigation in a given cell type, S the segments of the genome considering a window size of 200 base pairs, P is the number of peaks in every genomic segment. Consecutive segments with a signal reaching as a max value N are considered as reproducible regions and assigned with a value of 1. Opposite, consecutive segments with a signal reaching a max value lower than N are considered as not reproducible regions and assigned with a value of 0. The output is a table with a list of regions that are reproducible and not reproducible that will be further aggregated for all the protein under study. Schematic represenation can be observed in the Fig. 2 below.
+For our study N represents the number of replicates for each protein under investigation in a given cell type, S the segments of the genome considering a window size of 200 base pairs, P is the number of peaks in every genomic segment. Consecutive segments with a signal reaching as a max value N are considered as reproducible regions and assigned with a value of 1. Opposite, consecutive segments with a signal reaching a max value lower than N are considered as not reproducible regions and assigned with a value of 0. The output is a table with a list of regions that are reproducible and not reproducible that will be further aggregated for all the protein under study. Schematic representation can be observed in the Fig. 2 below.
 
 
 ![fig 2a](https://user-images.githubusercontent.com/6462162/53745203-d755f380-3e9e-11e9-994a-1261e955e79b.png)
