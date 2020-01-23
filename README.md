@@ -95,7 +95,7 @@ The script can be run:
 `Rstudio Random.Forest.r`
 
 ![](Pictures/For.Git.png)
-###### Figure 4) Random forest algorithm predicts variable regions in mESCs according to several features
+###### Figure 4) Random forest algorithm predicts variable regions in K562 and mESCs according to several DNA features
 
 
 # PCA in K562 cell lines with and without the variable regions
