@@ -94,9 +94,7 @@ The script can be run:
 
 `Rstudio Random.Forest.r`
 
-
-![roc for manuscript](https://user-images.githubusercontent.com/6462162/53503254-ff64e180-3aaf-11e9-8982-105edb3166cc.png)
-![model random](https://user-images.githubusercontent.com/6462162/53503321-1e637380-3ab0-11e9-81fe-0f05beb48838.png)
+![](Pictures/For.Git.png)
 ###### Figure 4) Random forest algorithm predicts variable regions in mESCs according to several features
 
 
