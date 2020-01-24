@@ -20,7 +20,6 @@ dl = pd.read_csv('./%s.tsv'%(cell), sep='\t')
 version = argv[2]
 
 # lists that contain the data and annotation
-# (depending on the given cell)
 datasets = []
 set_names = []
 
@@ -32,7 +31,7 @@ for index, row in dl.iterrows():
 	datasets.append(pd.read_csv(row['file_path'], sep='\t'))
 	set_names.append(row['name'])
 
-# define the classification features and the class feature name
+# define the names for the features and the class
 class_feature_name = 'Noisy' if 'Noisy' in datasets[0].columns else 'Class'
 features = []
 for col in datasets[0].columns:
@@ -50,10 +49,11 @@ importance['Feature'] = []
 importance['Importance'] = []
 importance['Dataset'] = []
 
+# used to sort the features for the barchart
 feature_imp_sum = dict((f, 0.0) for f in features)
 
 for index, name in enumerate(set_names):
-	# prepare classification features and the feature class
+	# prepare classification features and the class feature
 	X = np.array(datasets[index][features])
 	y = np.array(datasets[index][class_feature_name])
 	
@@ -95,7 +95,7 @@ for index, name in enumerate(set_names):
 			importance['Dataset'].append(name)
 			feature_imp_sum[feature] += rf.feature_importances_[i]
 	
-	# finalize curve interpolation and calculate the areas under curves
+	# finalize curve interpolation and calculate the areas under the curves
 	mean_precisions = np.mean(precisions, axis=0)
 	mean_precisions[0] = 1.0
 	auPRC = auc(mean_recall, mean_precisions)
@@ -103,6 +103,7 @@ for index, name in enumerate(set_names):
 	mean_tpr = np.mean(tprs, axis=0)
 	mean_tpr[-1] = 1.0
 	auROC = auc(mean_fpr, mean_tpr)
+	
 	print('\n%s balance: %.3f'%(name,balance_in_perc))
 	print('auROC: %.3f'%auROC)
 	print('auPRC: %.3f\n'%auPRC)
