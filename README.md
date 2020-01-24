@@ -92,7 +92,9 @@ We used the R package "randomforest" to check whether specific genomic regions w
 
 The script can be run:  
 
-`Rstudio Random.Forest.r`
+````
+python prediction_VOT_ML.py K562 paper
+````
 
 ![](Pictures/For.Git.png)
 ###### Figure 4) Random forest algorithm predicts variable regions in K562 and mESCs according to several DNA features
