@@ -88,7 +88,7 @@ Function 5) `simulated.pval(n.simulations,cutoff,real.value)`
 ###### Figure 3) A null distribution is computed for each cell line by sampling the reproducibility score matrix of Fig2-B. Z-score and P.value is computed for each score. In the picture, represented are the statistical test for DNA regions with reproducibility score 0 (that we renamed variable).
 
 # Variable regions prediction in mESC according to several DNA features
-We used the R package "randomforest" to check whether specific genomic regions were predictive of the variable behaviour for the proteins under investigation. We used a pannel of published datasets and mapped the variable regions to them. A null model was created with the package gkmSVM and the performance of the algorithm was checked with the package pROC.
+To train and test the random forest model we used the RandomForestClassifierfrom the Python package sklearn (0.21.3)  As features, we used a pannel of published datasets and mapped the variable regions to them. A null model was created with the package gkmSVM and the performance of the algorithm was obtained within a stratified ten-fold cross-validation using the appropriate sklearn functions.
 
 The script can be run:  
 
