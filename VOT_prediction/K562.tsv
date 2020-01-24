@@ -1,0 +1,6 @@
+file_path	name
+data/Table.K562.VOTs.default.tsv	Default
+data/Table.K562.VOTs.no.blacklist.tsv	No Blacklist
+data/Table.K562.VOTs.no.hot.tsv	No HOT
+data/Table.K562.VOTs.no.blacklist.no.hot.tsv	No BL, no HOT
+data/Table.K562.VOTs.default.old.tsv	Old neg. Set

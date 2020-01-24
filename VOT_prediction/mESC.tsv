@@ -1,0 +1,6 @@
+file_path	name
+data/Table.mESC.VOTs.default.tsv	Default
+data/Table.mESC.VOTs.no.blacklist.tsv	No Blacklist
+data/Table.mESC.VOTs.no.hot.tsv	No HOT
+data/Table.mESC.VOTs.no.blacklist.no.hot.tsv	No BL, no HOT
+data/Table.mESC.VOTs.default.old.tsv	Old neg. Set
