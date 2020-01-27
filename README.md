@@ -93,7 +93,7 @@ To train and test the random forest model we used the RandomForestClassifierfrom
 The simulation of the negative test set is obtained:
 
 ```
-random_region_VOT.py 
+random_region_VOT.py VOT.mm10.mESCs.proteins.bed VOT.simulated.bed
 ```
 
 The script can be run:  
