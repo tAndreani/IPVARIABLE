@@ -88,7 +88,7 @@ Function 5) `simulated.pval(n.simulations,cutoff,real.value)`
 ###### Figure 3) A null distribution is computed for each cell line by sampling the reproducibility score matrix of Fig2-B. Z-score and P.value is computed for each score. In the picture, represented are the statistical test for DNA regions with reproducibility score 0 (that we renamed variable).
 
 # Variable regions prediction in K562 cell lines and mESC according to several DNA features
-To train and test the random forest model we used the RandomForestClassifierfrom the Python package sklearn (0.21.3)  As features, we used a pannel of published datasets and mapped the variable regions to them. A null model was created with the package gkmSVM matching the simulated sequences in the same percentage as found in the positive test set at CG riche promoters, R-loops and 5'UTRs. The performance of the algorithm was obtained within a stratified ten-fold cross-validation using the appropriate sklearn functions.
+To train and test the random forest model we used the RandomForestClassifierfrom the Python package sklearn (0.21.3)  As features, we used a pannel of published datasets and mapped the variable regions to them. A null model was created with the package gkmSVM matching the simulated sequences in the same percentage as found in the positive test set at CG riche promoters, R-loops and 5'UTRs. The performance of the algorithm was obtained within a stratified ten-fold cross-validation using the appropriate sklearn functions. Instruction to run the script are in the folder `VOT_prediction`.
 
 The simulation of the negative test set is obtained (be sure the the R script `genNullSeqs_in.R` and the bed files are within your folder):
 
