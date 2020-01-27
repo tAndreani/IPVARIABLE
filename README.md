@@ -90,6 +90,12 @@ Function 5) `simulated.pval(n.simulations,cutoff,real.value)`
 # Variable regions prediction in K562 cell lines and mESC according to several DNA features
 To train and test the random forest model we used the RandomForestClassifierfrom the Python package sklearn (0.21.3)  As features, we used a pannel of published datasets and mapped the variable regions to them. A null model was created with the package gkmSVM matching the simulated sequences in the same percentage as found in the positive test set at CG riche promoters, R-loops and 5'UTRs. The performance of the algorithm was obtained within a stratified ten-fold cross-validation using the appropriate sklearn functions.
 
+The simulation of the negative test set is obtained:
+
+```
+random_region_VOT.py 
+```
+
 The script can be run:  
 
 ````
