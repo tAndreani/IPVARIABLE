@@ -1,7 +1,7 @@
 # Computational identification of cell-specific Variable regions in ChIP-seq data
 In this work we provide a method capable to detect variable DNA binding regions (that we named Variable Occupancy Targets of VOTs) of several transcription factors in a given cell type. The method takes in input ChIP-seq peaks and outputs the noisy ones that tend to be not reproducible. It can be useful to use this method in case a wet lab has obtained peaks from ChIP-seq expriments and wants to know their reliability in terms of reproducibility on a particular genomic location before downstream interpretative analysis and/or experimental follow up. The method can be extended also to other sequencing techniques that use replicated experiments for example, ATAC-seq from multiple cell types in developmental studies.  
 
-##### Manuscript in 2nd round of Revision: "Computational Identification of cell-specific variable regions in ChIP-seq data". T. Andreani, S. Albrecht, J.F. Fontaine and MA. Andrade-Navarro. Check our [paper] (doi:org/10.1093/nar/gkaa180) published in Nucleic Acid Research.
+##### Manuscript in 2nd round of Revision: "Computational Identification of cell-specific variable regions in ChIP-seq data". T. Andreani, S. Albrecht, J.F. Fontaine and MA. Andrade-Navarro. Check our paper (doi:org/10.1093/nar/gkaa180) published in Nucleic Acid Research.
 
 
 # Motivation
