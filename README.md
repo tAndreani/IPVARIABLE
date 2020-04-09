@@ -1,17 +1,17 @@
-# Computational identification of cell-specific Variable regions in ChIP-seq data
+## Computational identification of cell-specific Variable regions in ChIP-seq data
 In this work we provide a protocol capable to detect variable DNA binding regions (that we named Variable Occupancy Targets or VOTs) of several transcription factors in a given cell type. The method takes in input ChIP-seq peaks and outputs the noisy ones that tend to be not reproducible. It can be useful to use this method in case a wet lab has obtained peaks from ChIP-seq expriments and wants to know their reliability in terms of reproducibility on a particular genomic location before downstream interpretative analysis and/or experimental follow up. The method can be extended also to other sequencing techniques that use replicated experiments for example, ATAC-seq from multiple cell types in developmental studies.  
 
 ##### Check our paper [Computational Identification of cell-specific variable regions in ChIP-seq data](https://academic.oup.com/nar/advance-article/doi/10.1093/nar/gkaa180/5809673) published in _Nucleic Acid Research_.
 ##### Credits: T. Andreani, S. Albrecht, J.F. Fontaine and MA. Andrade-Navarro. 
 
-# Motivation
+## Motivation
 ChIP-seq is a standard technology in wet laboratories because it allows to map the genomic regions in which a protein or transcription factor is binding the DNA. Regulatory genomics labs have extensively used this technique to describe how, where and which gene is under the control of a transcription factor. However, the extent of the reproducibility of the binding sites can be confounded by several factors, such as the genomic location in which the transcription factor binds, DNA structures present at the moment of the immunoprecipitation, quality of the antibody as also the experimental conditions in cell culture (1,2,3). For this we have developed a method that can report variable transcription factors binding sites from ChIP-seq data in a given cell type of interest. Here the workflow:  
 
 ![workflow](https://user-images.githubusercontent.com/6462162/53744700-cd7fc080-3e9d-11e9-9eb0-247451da094b.png)
 
 ###### Figure 1) In the workflow: A) ENCODE experiments are selected according to standard parameters (see points from 1 to 6 in the experimental design paragraph), B) peaks are mapped to genomic segments of a defined window size and a sliding window is used to compute a reproducibility score. C) Regions with a specific score are tested for significance and D) PCA is performed to check if the removal of the variable regions can improve the explanation of the variability of  the samples. 
 
-# Experimental Design: define suitable set of experiments from ENCODE project
+## Experimental Design: define suitable set of experiments from ENCODE project
 We selected ENCODE experiments for four different proteins according to the following standard criteria:  
 1) from the same cell line  
 2) from the same lab (Snyder)  
@@ -26,14 +26,14 @@ Here we select experiments of 4 proteins and each one with 3 replicates from cel
 Here we select experiments of 4 proteins and each one with 3 replicates from cell line HepG2 in the Human Genome annotation hg19 example call:  
  `python get_list.py HepG2 3 4 hg19`  
 
-# Extraction of the experiments, download the files and assign the peaks to genomic segments
+## Extraction of the experiments, download the files and assign the peaks to genomic segments
 The output of the python script is a table with the information of the experiments. We create the folder for each protein and download the files associated in the table. After we create for each protein the matrix with assigned peaks for every genomic segment. Segments can be of 200 or 400 bp length depending on the user choice. 
 
 Segmentation of the genome and assignment of the peaks to genomics bins is performed with this bash script:  
 
 `bash ./Map.Peaks.to.bins.sh`  
 
-# Identification of reproducible and not reproducible regions 
+## Identification of reproducible and not reproducible regions 
 After the identification of suitable experiments and assigned the significant peaks to the genomic bins, we extracted reproducible and not reproducibile regions. We formalized the assignment of reproducible and not reproducible segments according to the following pseudo code rules:
 
 ```
@@ -64,7 +64,7 @@ Function 2) `createId`
 Function 3) `getSignalContaingRegions`
 
 
-# Reproducibility Score Matrix (RSM)
+## Reproducibility Score Matrix (RSM)
 Reproducible and not reproducible regions for all the proteins used in the experiments are aggregated in a reproducibility score matrix (Fig.2-B). 
 
 Function 4) `ReproducibilityScoreMatrix(df1,df2,df3,df4)`  
@@ -76,7 +76,7 @@ where df1, df2, df3 and df4 are the matrix with the regions reproducible and not
 Afterwards, regions with more than one NA value were discarded and regions with a reproducibility score of 0, that we named variable, are estimated computing a z-score and respective p.value after 1000 sampling of the reproducibility score matrix. Sampling is performed with the "sample" function in R.
  
 
-# Variable regions estimation in K562, GM12878, HepG2 and MCF-7 cell lines
+## Variable regions estimation in K562, GM12878, HepG2 and MCF-7 cell lines
 
 A statistical test was computed based on to the computation of a z-score and p.value using 1000 randomizations:  
 
@@ -87,7 +87,7 @@ Function 5) `simulated.pval(n.simulations,cutoff,real.value)`
 
 ###### Figure 3) A null distribution is computed for each cell line by sampling the reproducibility score matrix of Fig2-B. Z-score and P.value is computed for each score. In the picture, represented are the statistical test for DNA regions with reproducibility score 0 (that we renamed variable).
 
-# Variable regions prediction in K562 cell lines and mESC according to several DNA features
+## Variable regions prediction in K562 cell lines and mESC according to several DNA features
 To train and test the random forest model we used the RandomForestClassifierfrom the Python package sklearn (0.21.3)  As features, we used a pannel of published datasets and mapped the variable regions to them. A null model was created with the package gkmSVM matching the simulated sequences in the same percentage as found in the positive test set at CG riche promoters, R-loops and 5'UTRs. The performance of the algorithm was obtained within a stratified ten-fold cross-validation using the appropriate sklearn functions.
 
 To simulate the sequences the script can be found here `IPVARIABLE/VOT_prediction/` and run as follow by providing the VOTs files:
@@ -108,7 +108,7 @@ python prediction_VOT_ML.py K562 paper
 ###### Figure 4) Random forest algorithm predicts variable regions in K562 and mESCs according to several DNA features
 
 
-# PCA in K562 cell lines with and without the variable regions
+## PCA in K562 cell lines with and without the variable regions
 We created a python script using pandas in order to perform the PCA and check whether the removal of variable peaks improves the separation of the replicates in the PCA.  
 
 The script can be run:  
@@ -122,7 +122,7 @@ The script can be run:
 ![dotplot](https://user-images.githubusercontent.com/6462162/53503476-68e4f000-3ab0-11e9-880c-bb21e75caf62.png)
 ###### Figure 6) Euclidean distance of pairwise comparisons between replicates of the same protein as a box plot and as a dot plot 
 
-# References
+## References
 1. Teytelman, L., Thurtle, D. M., Rine, J., & van Oudenaarden, A. (2013). Highly expressed loci are vulnerable to misleading ChIP localization of multiple unrelated proteins. Proceedings of the National Academy of Sciences, 110(46), 18602–18607.  
 2. Jain, D., Baldi, S., Zabel, A., Straub, T., & Becker, P. B. (2015). Active promoters give rise to false positive “Phantom Peaks” in ChIP-seq experiments. Nucleic Acids Research, 43(14), 6959–6968.  
 3. Wreczycka K., F. Vedran, U. Bora, R. Wurmus, S. Bulut, B. Tursun, A. Akalin (2019). HOT or not: examining the basis of high-occupancy target regions, Nucleic Acids Research, 47(11), 5735-5745.  
