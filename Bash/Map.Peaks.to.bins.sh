@@ -86,7 +86,7 @@ sort -k 1,1 -k2,2n $i > $i.sorted;
 done &
 
 
-#Extract values 0= intersected and 1= intersected
+#Extract values 0= not intersected and 1= intersected
 for i in */*.sorted;
 do
 cut -f 4 $i > $i.value;
